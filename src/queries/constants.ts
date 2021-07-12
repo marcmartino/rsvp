@@ -1,6 +1,6 @@
 const API_URL =
   process.env["NODE_ENV"] !== "production"
-    ? "//localhost:3000"
+    ? "//localhost:3000/"
     : "https://wrsvp-api.herokuapp.com/";
 
 type Method = "GET" | "POST" | "PUT" | "DELETE";

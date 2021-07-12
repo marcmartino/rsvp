@@ -12,6 +12,8 @@ const resources = {
       "loginPage.nameInput": "Name",
       "loginPage.zipInput": "Zip Code",
       "loginPage.submitButton": "Log In",
+      userGreeting: "Welcome, {{name}}",
+      coupleGreeting: "Welcome {{name}} and {{soName}}",
     },
   },
   kr: {
