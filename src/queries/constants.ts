@@ -9,7 +9,7 @@ type ApiRoute<T> = { method: Method; url: string; body: T };
 
 export const AUTHORIZE_USER: ApiRoute<{ name: string; zip: string }> = {
   method: "POST",
-  url: `${API_URL}/authorizeUser`,
+  url: `${API_URL}authorizeUser`,
   body: {
     name: "",
     zip: "",
