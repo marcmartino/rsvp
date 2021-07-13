@@ -14,17 +14,24 @@ export const BgTiles: FC<Props> = ({}) => {
         left: 0,
         top: 0,
         width: "100vw",
+        height: "100vh",
         flexDirection: "row",
         flexWrap: "wrap",
+        display: "flex",
       }}
     >
-      <Tile width={49} />
-      <div style={{ width: "49%", flexDirection: "row", flexWrap: "wrap" }}>
+      {/* <Tile width={100} size="wide" /> */}
+      <div style={{ display: "flex", flexDirection: "row" }}>
         <Tile width={50} />
-        <Tile width={50} />
-        <Tile width={50} />
-        <Tile width={50} />
+        <div style={{ width: "49%", flexDirection: "row", flexWrap: "wrap" }}>
+          <Tile width={50} />
+          <Tile width={50} />
+          <Tile width={50} />
+          <Tile width={50} />
+        </div>
       </div>
+      <Tile width={50} size="tall" />
+      <Tile width={50} size="tall" />
     </div>
   );
 };
@@ -48,7 +55,11 @@ export const Tile: FC<TileProps> = ({ size = "square", width, height }) => {
   return (
     <img
       src={randomSrc}
-      style={{ width: `${width}%`, filter: "saturate(0.5) contrast(0.5)" }}
+      style={{
+        userSelect: "none",
+        width: `${width}%`,
+        filter: "saturate(0.5) contrast(0.5) grayscale(.5)",
+      }}
     />
   );
 };
