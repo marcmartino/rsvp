@@ -13,7 +13,16 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        minHeight: "75vh",
+        backgroundImage: `url(${process.env.PUBLIC_URL}/geoflowers.png)`,
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        padding: "15vh 20px",
+      }}
+    >
       {hasClicked ? (
         <>
           <header>
