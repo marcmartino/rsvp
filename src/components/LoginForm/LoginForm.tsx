@@ -1,39 +1,24 @@
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getAuth } from "../../queries/getAuth";
+import { AUTHORIZE_USER, useApiLazyHook } from "../../queries/constants";
 
-interface Props {}
+interface Props {
+  onSubmit: (values: { name: string; zip: string }) => void;
+  submitting: boolean;
+}
 
-export const LoginForm: FC<Props> = () => {
+export const LoginForm: FC<Props> = ({ onSubmit, submitting }) => {
   const { t } = useTranslation();
   const [{ name, zip }, setFormVals] = useState({ name: "", zip: "" });
-  const [authData, setAuthData] = useState<{
-    displayName?: string;
-    soName?: string;
-  }>({});
+  //   const [authorizeUser, { data: authData, error, loading }] =
+  //     useApiLazyHook(AUTHORIZE_USER);
+
   return (
     <div>
-      {authData.displayName && (
-        <h1>
-          {authData.soName
-            ? t("coupleGreeting", {
-                name: authData.displayName,
-                soName: authData.soName,
-              })
-            : t("userGreeting", { name: authData.displayName })}
-        </h1>
-      )}
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          getAuth(name, zip)
-            .then((e) => {
-              console.log("submit", e);
-              setAuthData(e);
-            })
-            .catch((err) => {
-              console.error(err);
-            });
+          onSubmit({ name, zip });
         }}
       >
         <div>
@@ -55,6 +40,7 @@ export const LoginForm: FC<Props> = () => {
           />
         </div>
         <input type="submit" title={t("loginPage.subitButton")} />
+        {submitting ? " loading" : ""}
       </form>
     </div>
   );

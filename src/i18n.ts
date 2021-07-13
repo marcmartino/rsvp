@@ -7,6 +7,9 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      "dashboard.updateWeddingRsvpButton":
+        "Update Wedding RSVP ({{accepted}}accepted/{{declined}}declined)",
+      "dashboard.setWeddingRsvpButton": "RSVP to the wedding",
       welcome: "Welcome",
       "loginPage.title": "Log In",
       "loginPage.nameInput": "Name",
@@ -14,6 +17,12 @@ const resources = {
       "loginPage.submitButton": "Log In",
       userGreeting: "Welcome, {{name}}",
       coupleGreeting: "Welcome {{name}} and {{soName}}",
+      "welcome.line1": "Marc",
+      "welcome.line2": "&",
+      "welcome.line3": "Jenna",
+      "welcome.subheading1": "Las Vegas, NV",
+      "welcome.subheading2": "October 23, 2021",
+      "welcome.enterButton": "RSVP here",
     },
   },
   kr: {
