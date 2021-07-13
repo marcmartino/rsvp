@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { LoginPage } from "./components/LoginPage/LoginPage";
 import { useAuth } from "./queries/getAuth";
 import { Dashboard } from "./components/Dashboard/Dashboard";
+import { BgTiles } from "./components/BgTiles/BgTiles";
 
 function App() {
   const {
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <BgTiles />
       {authData ? (
         <Dashboard auth={authData} />
       ) : (
