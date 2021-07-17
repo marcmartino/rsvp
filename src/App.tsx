@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <BgTiles />
+      {/* <BgTiles /> */}
       {authData ? (
         <Dashboard auth={authData} />
       ) : (

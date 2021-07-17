@@ -1,0 +1,10 @@
+.inputField {
+  width: 80%;
+  padding: 0.5em 5%;
+  margin: 0.5em 5%;
+  border: 1px solid var(--cta);
+}
+.inputField:focus {
+  background-color: var(--secondBackground);
+  border: 2px solid var(--primary);
+}
