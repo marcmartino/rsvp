@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
+import { palette } from "../../utils/styles";
 import { ReceptionInfo } from "../ReceptionInfo/ReceptionInfo";
 import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
 
@@ -13,9 +14,17 @@ export const Dashboard: FC<Props> = ({ auth }) => {
   console.log(auth);
 
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>{t("userGreeting", { name: auth.displayName })}</p>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: palette.background,
+        flex: 1,
+      }}
+    >
+      <h1>{t("userGreeting", { name: auth.displayName })}</h1>
 
       {auth.weddingAccess && <WeddingInfo auth={auth} />}
       {auth.receptionAccess && <ReceptionInfo auth={auth} />}

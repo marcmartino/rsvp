@@ -13,22 +13,19 @@ code {
 }
 
 :root {
-  --cta: "#F4F1DE";
-  --background: "#E07A5F";
-  --secondBackground: "#3D405B";
-  --primary: "#81B29A";
-  --secondary: "#F2CC8F";
-  --tertiary: "#8F5D5D";
-  --disabled: "#8C8C8C";
-}
-
-html {
   --cta: #3d405b;
   --background: #f4f1de;
-  --secondBackground: #e07a5f;
+  --secondBackground: #eab69f;
   --primary: #81b29a;
   --secondary: #f2cc8f;
   --tertiary: #8f5d5d;
   --disabled: #8c8c8c;
   --error: #8f5d5d;
+}
+
+html {
+}
+
+body {
+  background-color: var(--background);
 }

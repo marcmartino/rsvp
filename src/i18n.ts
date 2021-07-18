@@ -34,6 +34,11 @@ const resources = {
       jsonParse: "Failed to parse api response",
       "weddingVenue.long": "-115.4191462",
       "weddingVenue.lat": "36.1464701",
+      "weddingVenue.address": "Las Vegas, NV 89161",
+      clickForMap: "🗺️",
+      "weddingRsvp.set": "Wedding RSVP already set",
+      updateRsvp: "Update RSVP",
+      setRsvp: "RSVP Here",
     },
   },
   kr: {

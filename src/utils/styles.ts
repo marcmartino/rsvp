@@ -1,5 +1,5 @@
 const eggshellWhite = "#F4F1DE";
-const terraCottaPink = "#E07A5F";
+const terraCottaPink = "#EAB69F";
 const independencePurple = "#3D405B";
 const greenSheen = "#81B29A";
 const deepChampagneYellow = "#F2CC8F";
