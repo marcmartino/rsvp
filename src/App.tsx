@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       {/* <BgTiles /> */}
       {authData ? (
-        <Dashboard auth={authData} />
+        <Dashboard signout={signOut} auth={authData} />
       ) : (
         <LoginPage
           onSubmit={(d: Parameters<typeof signIn>[0]) => signIn(d)}

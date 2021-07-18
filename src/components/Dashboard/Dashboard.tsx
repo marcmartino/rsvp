@@ -7,9 +7,10 @@ import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
 
 interface Props {
   auth: AuthData;
+  signout: () => void;
 }
 
-export const Dashboard: FC<Props> = ({ auth }) => {
+export const Dashboard: FC<Props> = ({ auth, signout }) => {
   const { t } = useTranslation();
   console.log(auth);
 
@@ -39,6 +40,7 @@ export const Dashboard: FC<Props> = ({ auth }) => {
         ) : (
           <button>{t("dashboard.setWeddingRsvpButton")}</button>
         ))} */}
+      <button onClick={() => signout()}>{t("logout")}</button>
     </div>
   );
 };

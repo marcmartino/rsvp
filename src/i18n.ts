@@ -53,6 +53,7 @@ const resources = {
       by googling "Red Spring Picnic Area"
       See you at the wedding.
       `,
+      logout: "Logout",
     },
   },
   kr: {
