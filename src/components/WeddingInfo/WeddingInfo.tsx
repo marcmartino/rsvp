@@ -10,6 +10,7 @@ interface Props {
 
 export const WeddingInfo: FC<Props> = ({ auth }) => {
   const { t } = useTranslation();
+  const [showMore, setShowMore] = React.useState(false);
 
   return (
     <div
@@ -41,10 +42,14 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
             rel="noreferrer"
             href={mapsLink(t("weddingVenue.lat"), t("weddingVenue.long"))}
             style={{
-              backgroundColor: palette.secondary,
+              backgroundColor: palette.background,
               padding: 10,
               marginLeft: 10,
-              boxShadow: "2px 2px 4px rgba(0,0,0,.5)",
+              borderRadius: "50%",
+              borderWidth: 3,
+              borderColor: palette.tertiary,
+              borderStyle: "solid",
+              //   boxShadow: "2px 2px 4px rgba(0,0,0,.5)",
             }}
           >
             {t("clickForMap")}
@@ -62,6 +67,44 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
         <div>{t("welcome.date")}</div>
         <div>{t("weddingInfo.time")}</div>
       </div>
+
+      {!showMore && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              padding: "10px 10px 10px 0",
+            }}
+            onClick={() => setShowMore(true)}
+          >
+            {t("moreInfo")}
+          </a>
+        </div>
+      )}
+
+      {showMore && (
+        <div className="hiddenDescription" style={{ margin: "10px 0" }}>
+          <p
+            style={{
+              padding: "10px 10px",
+              margin: "0 10px",
+              backgroundColor: palette.background,
+              borderLeftWidth: 3,
+              borderLeftStyle: "solid",
+              borderLeftColor: palette.tertiary,
+              textAlign: "left",
+            }}
+          >
+            {t("weddingDescriptionText")}
+          </p>
+        </div>
+      )}
 
       {auth?.weddingAcceptedCount !== undefined &&
       auth?.weddingDeclinedCount ? (
