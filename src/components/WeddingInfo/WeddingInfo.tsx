@@ -18,7 +18,7 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
       <div>{t("weddingInfo.time")}</div>
       <button>{t("moreInfo")}</button>
       <div>
-        <a target="_blank" rel="noreferrer" href={mapsLink(t("weddingMapUrl"))}>
+        <a target="_blank" rel="noreferrer" href={mapsLink(t("weddingVenue.lat"), t("weddingVenue.long")}>
           Google Maps
         </a>
         <div>
