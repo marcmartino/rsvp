@@ -2,6 +2,7 @@ import { Type, OutputOf, void as v } from "io-ts";
 import * as E from "fp-ts/Either";
 import { useState } from "react";
 import { authorizeUserDecoder, rsvpBody } from "./decoders";
+import { useTranslation } from "react-i18next";
 
 const API_URL =
   process.env["NODE_ENV"] !== "production"
@@ -22,13 +23,14 @@ type ApiRoute<I, O> = {
 export const useApiLazyHook = <R extends ApiRoute<any, any>>(
   api: R
 ): [
-  (bodyData: R["input"]) => void,
+  (bodyData: R["input"]) => Promise<void>,
   {
     data?: OutputOf<R["decoder"]> | undefined;
     loading: boolean;
     error?: string | undefined;
   }
 ] => {
+  const { t } = useTranslation();
   const [fetchData, setFetchData] = useState<{
     data?: OutputOf<R["decoder"]>;
     loading: boolean;
@@ -36,16 +38,22 @@ export const useApiLazyHook = <R extends ApiRoute<any, any>>(
   }>({ data: undefined, loading: false, error: undefined });
 
   return [
-    (bodyData: R["input"]): void => {
+    (bodyData: R["input"]): Promise<void> => {
       setFetchData({ data: undefined, loading: true, error: undefined });
-      fetch(api.url, {
+      return fetch(api.url, {
         method: api.method,
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(bodyData),
       })
-        .then((d) => d.json())
+        .then((d) => {
+          console.log("status", d.status);
+          if (d.status === 200) {
+            return d.json();
+          }
+          return new Error(t("noInviteeFound"));
+        })
         .then((r) => api.decoder.decode(r))
         .then(
           E.matchW(
@@ -53,10 +61,13 @@ export const useApiLazyHook = <R extends ApiRoute<any, any>>(
               setFetchData({
                 data: undefined,
                 loading: false,
-                error: e[0].message || "Failed to parse api response",
+                error: e[0].message || t("noInviteeFound"),
               }),
             (data) => setFetchData({ data, loading: false, error: undefined })
           )
+        )
+        .catch((e) =>
+          setFetchData(() => ({ error: e.toString(), loading: false }))
         );
     },
     fetchData,

@@ -11,6 +11,7 @@ type Props = ComponentProps<typeof LoginForm>;
 export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   const { t } = useTranslation();
   const [hasClicked, setHasClicked] = useState(false);
+
   useEffect(() => {
     pingApi();
   }, []);

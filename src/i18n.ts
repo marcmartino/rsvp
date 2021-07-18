@@ -22,6 +22,9 @@ const resources = {
       "welcome.line1": "Jenna (Jieun) &",
       "welcome.line2": "Marc",
       "welcome.enterButton": "RSVP",
+      noInviteeFound:
+        "Invitee not found- Please try again or reach out directly to Marc or Jenna",
+      jsonParse: "Failed to parse api response",
     },
   },
   kr: {

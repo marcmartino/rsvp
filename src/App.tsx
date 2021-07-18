@@ -21,8 +21,9 @@ function App() {
         <Dashboard auth={authData} />
       ) : (
         <LoginPage
-          onSubmit={(d: Parameters<typeof signIn>[0]) => (signIn(d), undefined)}
+          onSubmit={(d: Parameters<typeof signIn>[0]) => signIn(d)}
           submitting={loading}
+          error={error}
         />
       )}
     </div>

@@ -1,20 +1,23 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AUTHORIZE_USER, useApiLazyHook } from "../../queries/constants";
 import { palette } from "../../utils/styles";
 import "./LoginForm.css";
+import { Wave } from "react-css-spinners";
 
 interface Props {
   onSubmit: (values: { name: string; zip: string }) => void;
   submitting: boolean;
+  error?: string;
 }
 
-export const LoginForm: FC<Props> = ({ onSubmit, submitting }) => {
+export const LoginForm: FC<Props> = ({ onSubmit, submitting, error }) => {
   const { t } = useTranslation();
   const [{ name, zip }, setFormVals] = useState({ name: "", zip: "" });
   //   const [authorizeUser, { data: authData, error, loading }] =
   //     useApiLazyHook(AUTHORIZE_USER);
 
+  console.log({ submitting });
   return (
     <div>
       <form
@@ -30,9 +33,7 @@ export const LoginForm: FC<Props> = ({ onSubmit, submitting }) => {
         }}
       >
         <header>
-          <h1 style={{ color: palette.cta, marginTop: "5vh" }}>
-            {t("loginPage.title")}
-          </h1>
+          <h1 style={{ color: palette.cta }}>{t("loginPage.title")}</h1>
         </header>
         <div>
           <div>
@@ -59,23 +60,28 @@ export const LoginForm: FC<Props> = ({ onSubmit, submitting }) => {
             />
           </div>
         </div>
-        <input
-          disabled={submitting}
-          style={{
-            backgroundColor: palette.cta,
-            height: "8vh",
-            borderWidth: 0,
-            width: "100vw",
-            color: palette.background,
-            fontSize: "1.5em",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
-          type="submit"
-          title="str"
-          value={t("loginPage.submitButton") as string}
-          // value={t("loginPage.submitButton")}
-        />
+
+        {error && (
+          <span style={{ color: palette.error, padding: "0 5vw" }}>
+            {error}
+          </span>
+        )}
+        <button
+          disabled={submitting || !name || !zip}
+          style={{ backgroundColor: palette.cta, color: palette.background }}
+          className="loginButton"
+          onClick={() => onSubmit({ name, zip })}
+        >
+          {t("loginPage.submitButton") as string}
+          {submitting && (
+            <Wave
+              style={{ marginLeft: 7.5 }}
+              size={25}
+              color={palette.background}
+              thickness={3}
+            />
+          )}
+        </button>
       </form>
     </div>
   );
