@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
+import { mapsLink } from "../../utils/mapLink";
 
 interface Props {
   auth: AuthData;
@@ -17,7 +18,7 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
       <div>{t("weddingInfo.time")}</div>
       <button>{t("moreInfo")}</button>
       <div>
-        <a target="_blank" href={t("weddingMapUrl")}>
+        <a target="_blank" rel="noreferrer" href={mapsLink(t("weddingMapUrl"))}>
           Google Maps
         </a>
         <div>
@@ -25,7 +26,8 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
             src="https://snazzymaps.com/embed/325290"
             width="800px"
             height="600px"
-            style={{ border: "none" }}
+            title="Wedding Venue Map"
+            style={{ border: "none", maxWidth: "100%" }}
           />
         </div>
       </div>

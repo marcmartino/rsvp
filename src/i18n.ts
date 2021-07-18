@@ -32,7 +32,7 @@ const resources = {
       noInviteeFound:
         "Invitee not found- Please try again or reach out directly to Marc or Jenna",
       jsonParse: "Failed to parse api response",
-      weddingMapUrl: "https://goo.gl/maps/RzWFmZzNnQ3C6SL7A",
+      weddingMapUrl: "goo.gl/maps/RzWFmZzNnQ3C6SL7A",
     },
   },
   kr: {
