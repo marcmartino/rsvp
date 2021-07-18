@@ -20,21 +20,12 @@ export const useAuth = () => {
         >[0];
         parsedCreds.name &&
           authorizeUser(parsedCreds).then(() => setUserData(parsedCreds));
-      } catch (e) {
-        console.log("failed to parse prev creds", e);
-      }
+      } catch (e) {}
     }
   }, []);
 
   useEffect(() => {
-    console.log("seeing if the use4r data qualifies for storage", {
-      data,
-      error,
-      loading,
-      userData,
-    });
     if (data && !error && !loading && userData) {
-      console.log("it does");
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
     }
   }, [data, error, loading, userData]);
@@ -45,7 +36,6 @@ export const useAuth = () => {
       setUserData({ name: d.name.trim(), zip: d.zip.trim() });
 
       authorizeUser({ name: d.name.trim(), zip: d.zip.trim() }).catch(() => {
-        console.log("sign in error");
         return "error loging in";
       });
     },

@@ -22,9 +22,17 @@ const resources = {
       "welcome.line1": "Jenna (Jieun) &",
       "welcome.line2": "Marc",
       "welcome.enterButton": "RSVP",
+      "receptionInfo.title": "Reception",
+      "receptionInfo.location": "The Blind Center",
+      "receptionInfo.time": "5:00pm",
+      "weddingInfo.title": "Wedding",
+      "weddingInfo.weddingLocation": "Red Springs Boardwalk",
+      "weddingInfo.time": "10:00am",
+      moreInfo: "More Info",
       noInviteeFound:
         "Invitee not found- Please try again or reach out directly to Marc or Jenna",
       jsonParse: "Failed to parse api response",
+      weddingMapUrl: "https://goo.gl/maps/RzWFmZzNnQ3C6SL7A",
     },
   },
   kr: {

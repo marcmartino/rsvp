@@ -48,7 +48,6 @@ export const useApiLazyHook = <R extends ApiRoute<any, any>>(
         body: JSON.stringify(bodyData),
       })
         .then((d) => {
-          console.log("status", d.status);
           if (d.status === 200) {
             return d.json();
           }
