@@ -14,10 +14,7 @@ interface Props {
 export const LoginForm: FC<Props> = ({ onSubmit, submitting, error }) => {
   const { t } = useTranslation();
   const [{ name, zip }, setFormVals] = useState({ name: "", zip: "" });
-  //   const [authorizeUser, { data: authData, error, loading }] =
-  //     useApiLazyHook(AUTHORIZE_USER);
 
-  console.log({ submitting });
   return (
     <div>
       <form
