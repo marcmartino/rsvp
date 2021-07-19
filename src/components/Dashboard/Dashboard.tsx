@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { palette } from "../../utils/styles";
+import { Button } from "../Button/Button";
 import { ReceptionInfo } from "../ReceptionInfo/ReceptionInfo";
 import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
 
@@ -40,7 +41,7 @@ export const Dashboard: FC<Props> = ({ auth, signout }) => {
         ) : (
           <button>{t("dashboard.setWeddingRsvpButton")}</button>
         ))} */}
-      <button onClick={() => signout()}>{t("logout")}</button>
+      <Button onPress={() => signout()} label={t("logout")} />
     </div>
   );
 };

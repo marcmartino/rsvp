@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { mapsLink } from "../../utils/mapLink";
 import { palette } from "../../utils/styles";
+import { Button } from "../Button/Button";
 
 interface Props {
   auth: AuthData;
@@ -80,6 +81,7 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
             href="#"
             style={{
               padding: "10px 10px 10px 0",
+              color: palette.primary,
             }}
             onClick={() => setShowMore(true)}
           >
@@ -113,18 +115,19 @@ export const WeddingInfo: FC<Props> = ({ auth }) => {
           <button>{t("updateRsvp")}</button>
         </div>
       ) : (
-        <button
-          style={{
-            width: "100%",
-            backgroundColor: palette.cta,
-            color: palette.background,
-            borderWidth: 0,
-            padding: "10px 0",
-            fontSize: "1.5em",
-          }}
-        >
-          {t("setRsvp")}
-        </button>
+        // <button
+        //   style={{
+        //     width: "100%",
+        //     backgroundColor: palette.cta,
+        //     color: palette.background,
+        //     borderWidth: 0,
+        //     padding: "10px 0",
+        //     fontSize: "1.5em",
+        //   }}
+        // >
+        //   {t("setRsvp")}
+        // </button>
+        <Button label={t("setRsvp")} color={"primary"} onPress={() => void 0} />
       )}
     </div>
   );

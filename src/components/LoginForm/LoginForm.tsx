@@ -4,6 +4,7 @@ import { AUTHORIZE_USER, useApiLazyHook } from "../../queries/constants";
 import { palette } from "../../utils/styles";
 import "./LoginForm.css";
 import { Wave } from "react-css-spinners";
+import { Button } from "../Button/Button";
 
 interface Props {
   onSubmit: (values: { name: string; zip: string }) => void;
@@ -63,7 +64,7 @@ export const LoginForm: FC<Props> = ({ onSubmit, submitting, error }) => {
             {error}
           </span>
         )}
-        <button
+        {/* <button
           disabled={submitting || !name || !zip}
           style={{ backgroundColor: palette.cta, color: palette.background }}
           className="loginButton"
@@ -78,7 +79,15 @@ export const LoginForm: FC<Props> = ({ onSubmit, submitting, error }) => {
               thickness={3}
             />
           )}
-        </button>
+        </button> */}
+        <Button
+          disabled={submitting || !name || !zip}
+          color={"primary"}
+          // style={{ backgroundColor: palette.cta, color: palette.background }}
+          // className="loginButton"
+          onPress={() => onSubmit({ name, zip })}
+          label={t("loginPage.submitButton") as string}
+        />
       </form>
     </div>
   );
