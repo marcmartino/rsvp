@@ -13,12 +13,14 @@ code {
 }
 
 :root {
+  --medium-width: 500px;
+  --large-width: 800px;
   --cta: #3d405b;
   --background: #f4f1de;
   --secondBackground: #eab69f;
-  --primary: #81b29a;
+  --primary: #8f5d5d;
   --secondary: #f2cc8f;
-  --tertiary: #8f5d5d;
+  --tertiary: #81b29a;
   --disabled: #8c8c8c;
   --error: #8f5d5d;
 }

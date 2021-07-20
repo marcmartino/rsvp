@@ -11,7 +11,6 @@ header h1 {
   border: 1px solid var(--cta);
 }
 .inputField:focus {
-  background-color: var(--secondBackground);
   border: 2px solid var(--primary);
 }
 
@@ -32,4 +31,7 @@ header h1 {
 
 .loginButton:disabled {
   background-color: var(--disabled);
+}
+
+@media screen and (min-width: 500px) {
 }

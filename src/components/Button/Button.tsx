@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Wave } from "react-css-spinners";
 import { palette } from "../../utils/styles";
+import "./Button.css";
 
 interface Props {
   label: string;
@@ -24,20 +25,9 @@ export const Button: FC<Props> = ({
 }) => {
   return (
     <button
+      className={["rsvpButton", color].join(" ")}
       disabled={!!disabled}
       onClick={onPress}
-      style={{
-        backgroundColor: disabled ? palette.disabled : buttonColors[color],
-        color: palette.background,
-        width: "100%",
-        height: "8vh",
-        borderWidth: 0,
-        fontSize: "1.2em",
-        fontWeight: "bold",
-        cursor: "pointer",
-        // display: "flex",
-        // justifyContent: "center",
-      }}
     >
       {label}
       {loading && (
