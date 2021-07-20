@@ -5,6 +5,8 @@ import { getUniquesFromRange, randomImages } from "../../utils/randomImage";
 import { palette } from "../../utils/styles";
 import { EnterButton } from "../EnterButton/EnterButton";
 import { LoginForm } from "../LoginForm/LoginForm";
+import "./LoginPage.css";
+import { Button } from "../Button/Button";
 
 type Props = ComponentProps<typeof LoginForm>;
 
@@ -34,6 +36,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
         style={{ backgroundColor: palette.background }}
       >
         <div
+          className="topImage"
           style={{
             height: "30vh",
             backgroundImage: `url('${images[0]}')`,
@@ -42,26 +45,17 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
           }}
         />
         {hasClicked ? (
-          <div style={{ height: "40vh" }}>
+          <div className="loginPageContent">
             <LoginForm {...loginFormProps} />
           </div>
         ) : (
           <a
+            className="loginPageContent"
             href="#"
             onClick={() => setHasClicked(true)}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              alignItems: "center",
-              // textDecoration: "none",
-              textDecoration: "none",
               color: palette.cta,
               backgroundColor: palette.background,
-              // borderWidth: `0 0 2vh`,
-              // borderBottomColor: palette.primary,
-              height: "40vh",
-              // borderStyle: "solid",
             }}
           >
             <div />
@@ -73,7 +67,10 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
                 alignItems: "flex-start",
               }}
             >
-              <p style={{ textAlign: "left", lineHeight: "1em" }}>
+              <p
+                className="dateLocation"
+                style={{ textAlign: "left", lineHeight: "1em" }}
+              >
                 {t("welcome.date")}
                 <br />
                 {t("welcome.location")}
@@ -82,18 +79,20 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
               <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line2")}</h1>
             </div>
 
-            <EnterButton
+            {/* <EnterButton
+              onPress={() => setHasClicked(true)}
+              label={t("welcome.enterButton")}
+            /> */}
+            <Button
               onPress={() => setHasClicked(true)}
               label={t("welcome.enterButton")}
             />
           </a>
         )}
         <div
+          className="backgroundImage"
           style={{
-            height: "30vh",
             backgroundImage: `url('${images[1]}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         />
       </div>

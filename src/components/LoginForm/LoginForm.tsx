@@ -17,7 +17,11 @@ export const LoginForm: FC<Props> = ({ onSubmit, submitting, error }) => {
   const [{ name, zip }, setFormVals] = useState({ name: "", zip: "" });
 
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+      }}
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
