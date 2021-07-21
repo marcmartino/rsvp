@@ -16,7 +16,15 @@ function App() {
     <div className="App">
       {/* <BgTiles /> */}
       {authData ? (
-        <Dashboard signout={signOut} auth={authData} />
+        <Dashboard
+          refetchAuth={() =>
+            signIn({ name: authData.recordName, zip: authData.zip }).then(
+              () => undefined
+            )
+          }
+          signout={signOut}
+          auth={authData}
+        />
       ) : (
         <LoginPage
           onSubmit={(d: Parameters<typeof signIn>[0]) => signIn(d)}

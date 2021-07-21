@@ -35,9 +35,11 @@ export const useAuth = () => {
       /* signin function */
       setUserData({ name: d.name.trim(), zip: d.zip.trim() });
 
-      authorizeUser({ name: d.name.trim(), zip: d.zip.trim() }).catch(() => {
-        return "error loging in";
-      });
+      return authorizeUser({ name: d.name.trim(), zip: d.zip.trim() }).catch(
+        () => {
+          return "error loging in";
+        }
+      );
     },
     signOut: () => {
       /* signout function */

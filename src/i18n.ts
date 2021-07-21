@@ -50,10 +50,22 @@ const resources = {
       As you will be walking a bit, 
       please consider wearing comfortable shoes for walking
       You can find the direction to the parking area 
-      by googling "Red Spring Picnic Area"
+      by googling "Red Spring Picnic Area".
       See you at the wedding.
       `,
       logout: "Logout",
+
+      "receptionRsvp.set": "Reception RSVP already set:",
+      "receptionInfo.address.line1": "1001 N Bruce St",
+      "receptionInfo.address.line2": "Las Vegas, NV 89101",
+      "receptionVenue.lat": "36.18269",
+      "receptionVenue.long": "-115.12544",
+      cancel: "Cancel",
+      "rsvpForm.notes": "Notes",
+      attendingCount: "Total Attending: {{count}}",
+      decliningCount: "Declining: {{count}}",
+      familyMemberName: "Full Name of Guest {{number}}",
+      childrenAttendingCount: "Children in your party: {{count}}",
     },
   },
   kr: {
