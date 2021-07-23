@@ -20,9 +20,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
     pingApi();
   }, []);
 
-  const width: boolean | undefined = screenWidth
-    ? screenWidth > 500
-    : undefined;
+  const width: boolean = (screenWidth || 0) > 500;
 
   const images = useMemo(
     () => screenWidth && randomImages(2)("wide", screenWidth),

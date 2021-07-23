@@ -19,9 +19,7 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
   const { width: screenWidth } = useWindowSize();
   console.log(auth);
 
-  const width: boolean | undefined = screenWidth
-    ? screenWidth > 500
-    : undefined;
+  const width: boolean = (screenWidth || 0) > 500;
 
   const bgImage = useMemo(
     () => screenWidth && randomImages(1)("tall", screenWidth),
