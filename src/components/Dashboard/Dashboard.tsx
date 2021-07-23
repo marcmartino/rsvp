@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { randomImages } from "../../utils/randomImage";
@@ -19,7 +19,14 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
   const { width: screenWidth } = useWindowSize();
   console.log(auth);
 
-  const bgImage = randomImages(1)("tall", screenWidth);
+  const width: boolean | undefined = screenWidth
+    ? screenWidth > 500
+    : undefined;
+
+  const bgImage = useMemo(
+    () => screenWidth && randomImages(1)("tall", screenWidth),
+    [width]
+  );
 
   return (
     <div
@@ -29,11 +36,13 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: palette.background,
-        backgroundImage: `url(${bgImage[0]})`,
+
         backgroundPosition: "center",
         backgroundSize: "cover",
         flex: 1,
         minHeight: "100vh",
+
+        ...(bgImage ? { backgroundImage: `url(${bgImage[0]})` } : {}),
       }}
     >
       <h1>{t("userGreeting", { name: auth.displayName })}</h1>

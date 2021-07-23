@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC, useEffect, useState } from "react";
+import React, { ComponentProps, FC, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { pingApi } from "../../queries/pingApi";
 import { getUniquesFromRange, randomImages } from "../../utils/randomImage";
@@ -20,7 +20,14 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
     pingApi();
   }, []);
 
-  const images = randomImages(2)("wide", screenWidth);
+  const width: boolean | undefined = screenWidth
+    ? screenWidth > 500
+    : undefined;
+
+  const images = useMemo(
+    () => screenWidth && randomImages(2)("wide", screenWidth),
+    [width]
+  );
 
   return (
     <div
@@ -41,7 +48,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
           className="topImage"
           style={{
             height: "30vh",
-            backgroundImage: `url('${images[0]}')`,
+            backgroundImage: `url('${images ? images[0] : ""}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -94,7 +101,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
         <div
           className="backgroundImage"
           style={{
-            backgroundImage: `url('${images[1]}')`,
+            backgroundImage: `url('${images ? images[1] : ""}')`,
           }}
         />
       </div>
