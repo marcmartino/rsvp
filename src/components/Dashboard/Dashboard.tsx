@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { randomImages } from "../../utils/randomImage";
 import { palette } from "../../utils/styles";
+import { useWindowSize } from "../../utils/useWindowSize";
 import { Button } from "../Button/Button";
 import { ReceptionInfo } from "../ReceptionInfo/ReceptionInfo";
 import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
@@ -15,9 +16,10 @@ interface Props {
 
 export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
   const { t } = useTranslation();
+  const { width: screenWidth } = useWindowSize();
   console.log(auth);
 
-  const bgImage = randomImages(1)("tall");
+  const bgImage = randomImages(1)("tall", screenWidth);
 
   return (
     <div

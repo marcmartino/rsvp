@@ -7,18 +7,20 @@ import { EnterButton } from "../EnterButton/EnterButton";
 import { LoginForm } from "../LoginForm/LoginForm";
 import "./LoginPage.css";
 import { Button } from "../Button/Button";
+import { useWindowSize } from "../../utils/useWindowSize";
 
 type Props = ComponentProps<typeof LoginForm>;
 
 export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   const { t } = useTranslation();
   const [hasClicked, setHasClicked] = useState(false);
+  const { width: screenWidth } = useWindowSize();
 
   useEffect(() => {
     pingApi();
   }, []);
 
-  const images = randomImages(2)("wide");
+  const images = randomImages(2)("wide", screenWidth);
 
   return (
     <div
