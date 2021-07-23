@@ -168,6 +168,7 @@ export const ReceptionRsvpForm: FC<Props> = ({
         <div style={{ display: "flex", flexDirection: "column" }}>
           {[...Array(rsvpData.acceptCount || 0)].map((_, i) => (
             <input
+              className="nameBox"
               type="text"
               key={i}
               value={famNamesCache?.[i] || ""}

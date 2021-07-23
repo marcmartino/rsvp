@@ -1,0 +1,46 @@
+.greeting {
+  background-color: var(--cta);
+  color: var(--background);
+  padding: 20px 0;
+  width: 100%;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.bottomDashboard {
+  width: 100vw;
+  /* opacity: 0.5; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.weddingInfoContainer,
+.receptionInfoContainer {
+  width: 80vw;
+}
+
+.nameBox {
+  margin: 3px 12px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+@media screen and (min-width: 500px) {
+  .greeting {
+  }
+
+  .bottomDashboard {
+    /* margin-left: 60vw; */
+    width: 60vw;
+    max-width: 400px;
+    align-items: flex-end;
+    margin-right: 3vw;
+  }
+  .weddingInfoContainer,
+  .receptionInfoContainer {
+    width: 100%;
+  }
+}

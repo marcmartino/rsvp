@@ -9,8 +9,21 @@ function App() {
     signIn,
     signOut,
 
-    results: { data: authData, loading, error },
+    //results: { data: authData, loading, error },
   } = useAuth();
+  const authData = {
+    id: 52,
+    displayName: "Jieunysaurus Rex",
+    recordName: "Jieun",
+    zip: "80237",
+    weddingAccess: true,
+    receptionAccess: true,
+    inviteeStatus: "couple",
+    soName: "Makeu",
+    familyKey: "The Martinos",
+  };
+  const loading = false;
+  const error = undefined;
 
   return (
     <div className="App">

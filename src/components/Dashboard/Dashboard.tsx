@@ -6,6 +6,7 @@ import { palette } from "../../utils/styles";
 import { Button } from "../Button/Button";
 import { ReceptionInfo } from "../ReceptionInfo/ReceptionInfo";
 import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
+import "./Dashboard.css";
 
 interface Props {
   auth: AuthData;
@@ -21,6 +22,7 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
 
   return (
     <div
+      className="dashboard"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -34,30 +36,29 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
         minHeight: "100vh",
       }}
     >
-      <h1>{t("userGreeting", { name: auth.displayName })}</h1>
+      <h1 className="greeting">
+        {t("userGreeting", { name: auth.displayName })}
+      </h1>
+      <div className="bottomDashboard">
+        {auth.weddingAccess && (
+          <div
+            className="weddingInfoContainer"
+            style={{ marginTop: 10, marginBottom: 10 }}
+          >
+            <WeddingInfo refetchAuth={refetchAuth} auth={auth} />
+          </div>
+        )}
+        {auth.receptionAccess && (
+          <div
+            className="receptionInfoContainer"
+            style={{ marginTop: 10, marginBottom: 10 }}
+          >
+            <ReceptionInfo refetchAuth={refetchAuth} auth={auth} />
+          </div>
+        )}
 
-      {auth.weddingAccess && (
-        <div style={{ marginTop: 10, marginBottom: 10 }}>
-          <WeddingInfo refetchAuth={refetchAuth} auth={auth} />
-        </div>
-      )}
-      {auth.receptionAccess && (
-        <div style={{ marginTop: 10, marginBottom: 10 }}>
-          <ReceptionInfo refetchAuth={refetchAuth} auth={auth} />
-        </div>
-      )}
-      {/* {auth.weddingAcceptedCount &&
-        (auth.weddingAcceptedCount ? (
-          <button>
-            {t("dashboard.updateWeddingRsvpButton", {
-              accepted: auth.weddingAcceptedCount,
-              declined: auth.weddingDeclinedCount,
-            })}
-          </button>
-        ) : (
-          <button>{t("dashboard.setWeddingRsvpButton")}</button>
-        ))} */}
-      <Button color="cancel" onPress={() => signout()} label={t("logout")} />
+        <Button color="cancel" onPress={() => signout()} label={t("logout")} />
+      </div>
     </div>
   );
 };

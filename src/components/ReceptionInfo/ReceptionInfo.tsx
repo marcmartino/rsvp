@@ -20,7 +20,7 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth }) => {
     <div
       style={{
         backgroundColor: palette.secondBackground,
-        width: "90%",
+        width: "100%",
         padding: "5px 0 0",
       }}
     >
@@ -51,7 +51,7 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth }) => {
               marginBottom: 15,
             }}
           >
-            <div>
+            <div className="text">
               <div>{t("receptionInfo.location")}</div>
               <div>{t("receptionInfo.address.line1")}</div>
               <div>{t("receptionInfo.address.line2")}</div>
