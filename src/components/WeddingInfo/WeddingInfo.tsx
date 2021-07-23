@@ -24,7 +24,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
     <div
       style={{
         backgroundColor: palette.secondBackground,
-        width: "90%",
+        width: "100%",
         padding: "5px 0 0",
       }}
     >
@@ -54,9 +54,10 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
               justifyContent: "center",
               alignItems: "center",
               marginBottom: 15,
+              width: "100%",
             }}
           >
-            <div>
+            <div className="text">
               <div>{t("weddingInfo.weddingLocation")}</div>
               <div>{t("weddingVenue.address")}</div>
             </div>

@@ -7,6 +7,7 @@ import { useWindowSize } from "../../utils/useWindowSize";
 import { Button } from "../Button/Button";
 import { ReceptionInfo } from "../ReceptionInfo/ReceptionInfo";
 import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
+import "./Dashboard.css";
 
 interface Props {
   auth: AuthData;
@@ -21,51 +22,54 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
 
   const width: boolean = (screenWidth || 0) > 500;
 
-  const bgImage = useMemo(() => randomImages(1)("tall", screenWidth || 0), [
-    width,
-  ]);
+  const bgImage = useMemo(
+    () => randomImages(1)(width ? "wide" : "tall", screenWidth || 0),
+    [width]
+  );
 
   return (
     <div
       style={{
+        justifyContent: "space-between",
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: palette.background,
-
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        flex: 1,
-        minHeight: "100vh",
-
-        ...(bgImage ? { backgroundImage: `url(${bgImage[0]})` } : {}),
       }}
     >
-      <h1>{t("userGreeting", { name: auth.displayName })}</h1>
+      <h1 className="greeting">
+        {t("userGreeting", { name: auth.displayName })}
+      </h1>
+      <div
+        className="dashboard"
+        style={{
+          ...(bgImage ? { backgroundImage: `url(${bgImage[0]})` } : {}),
+        }}
+      >
+        <div className="bottomDashboard">
+          {auth.weddingAccess && (
+            <div
+              className="weddingInfoContainer"
+              style={{ marginTop: 10, marginBottom: 10 }}
+            >
+              <WeddingInfo refetchAuth={refetchAuth} auth={auth} />
+            </div>
+          )}
+          {auth.receptionAccess && (
+            <div
+              className="receptionInfoContainer"
+              style={{ marginTop: 10, marginBottom: 10 }}
+            >
+              <ReceptionInfo refetchAuth={refetchAuth} auth={auth} />
+            </div>
+          )}
 
-      {auth.weddingAccess && (
-        <div style={{ marginTop: 10, marginBottom: 10 }}>
-          <WeddingInfo refetchAuth={refetchAuth} auth={auth} />
+          <Button
+            color="cancel"
+            onPress={() => signout()}
+            label={t("logout")}
+          />
         </div>
-      )}
-      {auth.receptionAccess && (
-        <div style={{ marginTop: 10, marginBottom: 10 }}>
-          <ReceptionInfo refetchAuth={refetchAuth} auth={auth} />
-        </div>
-      )}
-      {/* {auth.weddingAcceptedCount &&
-        (auth.weddingAcceptedCount ? (
-          <button>
-            {t("dashboard.updateWeddingRsvpButton", {
-              accepted: auth.weddingAcceptedCount,
-              declined: auth.weddingDeclinedCount,
-            })}
-          </button>
-        ) : (
-          <button>{t("dashboard.setWeddingRsvpButton")}</button>
-        ))} */}
-      <Button color="cancel" onPress={() => signout()} label={t("logout")} />
+      </div>
     </div>
   );
 };
