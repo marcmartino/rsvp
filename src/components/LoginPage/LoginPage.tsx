@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC, useEffect, useState } from "react";
+import React, { ComponentProps, FC, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { pingApi } from "../../queries/pingApi";
 import { getUniquesFromRange, randomImages } from "../../utils/randomImage";
@@ -7,18 +7,24 @@ import { EnterButton } from "../EnterButton/EnterButton";
 import { LoginForm } from "../LoginForm/LoginForm";
 import "./LoginPage.css";
 import { Button } from "../Button/Button";
+import { useWindowSize } from "../../utils/useWindowSize";
 
 type Props = ComponentProps<typeof LoginForm>;
 
 export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   const { t } = useTranslation();
   const [hasClicked, setHasClicked] = useState(false);
+  const { width: screenWidth } = useWindowSize();
 
   useEffect(() => {
     pingApi();
   }, []);
 
-  const images = randomImages(2)("wide");
+  const width: boolean = (screenWidth || 0) > 500;
+
+  const images = useMemo(() => randomImages(2)("wide", screenWidth || 0), [
+    width,
+  ]);
 
   return (
     <div
@@ -39,7 +45,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
           className="topImage"
           style={{
             height: "30vh",
-            backgroundImage: `url('${images[0]}')`,
+            backgroundImage: `url('${images ? images[0] : ""}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -92,7 +98,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
         <div
           className="backgroundImage"
           style={{
-            backgroundImage: `url('${images[1]}')`,
+            backgroundImage: `url('${images ? images[1] : ""}')`,
           }}
         />
       </div>
