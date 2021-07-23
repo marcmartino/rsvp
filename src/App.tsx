@@ -12,15 +12,21 @@ function App() {
     //results: { data: authData, loading, error },
   } = useAuth();
   const authData = {
-    id: 52,
-    displayName: "Jieunysaurus Rex",
-    recordName: "Jieun",
-    zip: "80237",
+    id: 22,
+    displayName: "Mr Juhan Kim ",
+    recordName: "Juhan Kim",
+    zip: "68130",
     weddingAccess: true,
     receptionAccess: true,
-    inviteeStatus: "couple",
-    soName: "Makeu",
-    familyKey: "The Martinos",
+    inviteeStatus: "family",
+    familyNames: [
+      "오마하 언니",
+      "오마하 형부",
+      "Ms Sua Kim",
+      "Mr Juhan Kim ",
+      "Esteemed Ehan Kim",
+    ],
+    familyKey: "Omaha Family",
   };
   const loading = false;
   const error = undefined;

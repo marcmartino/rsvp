@@ -63,9 +63,9 @@ export const ReceptionRsvpForm: FC<Props> = ({
 
   return (
     <form onSubmit={submit}>
-      <div style={{ marginTop: 10, marginBottom: 10 }}>
+      <div style={{ marginTop: 10, padding: "0 10px", marginBottom: 10 }}>
         {
-          <div>
+          <div className="attendDecline">
             <div>
               <div>
                 {t("attendingCount", { count: rsvpData.acceptCount || 0 })}
@@ -191,6 +191,7 @@ export const ReceptionRsvpForm: FC<Props> = ({
         </div>
 
         <textarea
+          className="receptionText"
           value={rsvpData.notes}
           placeholder={t("rsvpForm.notes")}
           onChange={(e) =>
