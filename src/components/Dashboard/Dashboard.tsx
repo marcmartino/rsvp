@@ -21,10 +21,9 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
 
   const width: boolean = (screenWidth || 0) > 500;
 
-  const bgImage = useMemo(
-    () => screenWidth && randomImages(1)("tall", screenWidth),
-    [width]
-  );
+  const bgImage = useMemo(() => randomImages(1)("tall", screenWidth || 0), [
+    width,
+  ]);
 
   return (
     <div

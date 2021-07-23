@@ -22,10 +22,9 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
 
   const width: boolean = (screenWidth || 0) > 500;
 
-  const images = useMemo(
-    () => screenWidth && randomImages(2)("wide", screenWidth),
-    [width]
-  );
+  const images = useMemo(() => randomImages(2)("wide", screenWidth || 0), [
+    width,
+  ]);
 
   return (
     <div
