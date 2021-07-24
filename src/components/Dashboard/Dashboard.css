@@ -1,7 +1,10 @@
 .greeting {
   background-color: var(--cta);
   color: var(--background);
-  padding: 20px 40px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .text {
@@ -37,8 +40,10 @@
 }
 
 textarea {
-  width: calc(100% - 20px);
+  width: calc(100% - 6px);
   font-size: 20px;
+  border: 1px solid var(--cta);
+  border-radius: 2px;
 }
 
 input[type="range"] {
@@ -50,7 +55,8 @@ input[type="range"] {
 }
 
 .nameBox {
-  margin: 3px 12px;
+  border: 1px solid var(--cta);
+  margin: 3px 0;
   border-radius: 3px;
   padding: 10px;
 }

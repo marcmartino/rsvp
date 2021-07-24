@@ -12,8 +12,8 @@ const resources = {
       "dashboard.setWeddingRsvpButton": "RSVP to the wedding",
       welcome: "Welcome",
       "loginPage.title": "Log In",
-      "loginPage.nameInput": "Name",
-      "loginPage.zipInput": "Zip Code",
+      "loginPage.nameInput": "Your Name",
+      "loginPage.zipInput": "Your Zip Code",
       "loginPage.submitButton": "Log In",
       userGreeting: "Welcome, {{name}}",
       coupleGreeting: "Welcome {{name}} and {{soName}}",
@@ -55,6 +55,9 @@ const resources = {
       `,
       logout: "Logout",
 
+      timeUntilWedding: "",
+      timeSinceWedding: "",
+
       "receptionRsvp.set": "Reception RSVP already set:",
       "receptionInfo.address.line1": "1001 N Bruce St",
       "receptionInfo.address.line2": "Las Vegas, NV 89101",
@@ -66,6 +69,76 @@ const resources = {
       decliningCount: "Declining: {{count}}",
       familyMemberName: "Full Name of Guest {{number}}",
       childrenAttendingCount: "Children in your party: {{count}}",
+      "menuItem.home": "Home",
+      "menuItem.faqs": "FAQs",
+      "menuItem.gallery": "Gallery",
+
+      "galleryPage.comingSoon": "Gallery Coming After the Wedding",
+      "galleryPage.instruction":
+        "Please tag images shared on social media with the tag #JieunAndMarc2021 so we can agreggate them here after the wedding.",
+
+      "questionsPage.title": "Common Questions",
+      "questionPage.question1":
+        "Why did we choose to have our wedding ceremony at Red Springs Boardwalk?",
+      "questionPage.answer1":
+        "It is just so beautiful here. Marc and I used to walk there whenever it was nice out. I definitely would pick this place as the most beautiful outdoor spot in Las Vegas in my heart. Also, we took our engagement photoshoot here.",
+      "questionPage.question2": "When is the RSVP deadline?",
+      "questionPage.answer2":
+        "Please RSVP by October 1st, so we can have an accurate headcount. :)",
+      "questionPage.question3": "May I bring a date?",
+      "questionPage.answer3": "Yes, you are invited to bring a + 1 :)",
+      "questionPage.question4": "Are young children welcome?",
+      "questionPage.answer4":
+        "As much as we love your little ones, we will not be including them in the reception. However, we recognize that some of you will be traveling with your kids, so please know they are welcome at the Ceremony at Red Rock! If you cannot find other accommodations for them or have any questions please reach out to us.",
+      "questionPage.answer4b":
+        "As much as we love your little ones, we would prefer not to include them in the reception. If you cannot find other accommodations for them or have any questions please reach out to us.",
+      "questionPage.answer4c": "Yes they are!",
+      "questionPage.question5": "What will the weather be like?",
+      "questionPage.answer5":
+        "Welcome to Las Vegas, all of you out-of-towners! The weather in October can be somewhat cooler weather, providing a little break from the desert's relentless heat. The average low temperature is 46 °F (8°C) while highs still reach into the 80 °F (27 °C) range. During the day, expect lots of sunshine—the average rainfall for October is only 0.3 inches. When the sun sets, the desert city gets cool very quickly. Please bring some warm layers for the evening, we don't want anyone freezing their bu… well you get the point. ;)",
+      "questionPage.question6": "Where should I park?",
+      "questionPage.answer6": "Red Spring Boardwalk offers free parking-",
+      "questionPage.question7": "What should I wear?",
+      "questionPage.answer7":
+        "Semi-formal (suit and tie and cocktail dresses) or Cocktail attire (suits and party dresses)",
+      "questionPage.question8": "Is the wedding indoors or outdoors?",
+      "questionPage.answer8": "Our wedding ceremony is outdoors.",
+      "questionPage.question9": "What kind of shoes should/shouldn't I wear?",
+      "questionPage.answer9":
+        "Calling all ladies! Please be aware of that 0.5 miles of walking to our ceremony platform. A lot of people bring both comfy shoes and high heels and they switch around between walking and taking photos. I will leave it up to you girls.",
+      "questionPage.question10": "Is the reception indoors or outdoors?",
+      "questionPage.answer10": "Our reception is being held indoors.",
+      "questionPage.question11":
+        "Is it okay to take pictures with our phones and cameras during the wedding?",
+      "questionPage.answer11":
+        "Yes! We would love for you to take photos/videos and share them with us via whatsapp, google photo, or text message. For Instagram or FB, please use #MarcAndJenna2021 so we can fill up the gallery with all your beautiful images.",
+      "questionPage.question12": "Whom should I call with questions?",
+      "questionPage.answer12":
+        "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248. If we don’t answer your phone or text message, please reach out to our sister, Stephanie with a question at (702) 756-4612.",
+      "questionPage.answer12b":
+        "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248.",
+
+      "questionPage.question13": "Do you have a wedding registry?",
+      "questionPage.answer13":
+        "The only present we want is your attendance on our special day. However, if you insist on giving we would hugely appreciate a donation towards our honeymoon fund in place of any physical wedding gifts.",
+      "questionPage.question14": "What is the best way to get to the strip?",
+      "questionPage.answer14":
+        "There are lots of ways to get downtown or strip! There are several car rental options, and Lyft and Uber are relatively inexpensive. Every MGM property casino & hotel charges a parking fee. These casino hotels below offer free parking: Wynn, Treasure Island, Venetian, or Wynn.",
+      "questionPage.question15": "Can you recommend anywhere to eat in Vegas?",
+      "questionPage.answer15":
+        "Tacos El Gordo|http://tacoselgordobc.com/locations/,Sushi Neko|https://www.yelp.com/biz/sushi-neko-las-vegas,Master Kim’s Korean BBQ|https://masterkimslv.com/,Lotus of Siam|https://lotusofsiamlv.com/,Nabe Hot Pot|https://www.yelp.com/biz/nabe-hotpot-las-vegas,Shanghai Plaza (So many good dessert options)|https://vegas.eater.com/venue/56581/shanghai-plaza,Mint Indian|https://www.mintbistro.com/",
+      "questionPage.question16":
+        "Can you recommend any fun things to do/see in Vegas?",
+      "questionPage.answer16":
+        "Walking around Venetian Grand Canal shops,Visiting the Palazzo love sign,Viewing the Bellagio Garden,Game Nest Arcade|http://www.gamenestlv.com/,Area 15|https://area15.com/,Red Rock Canyon|https://www.redrockcanyonlv.org/,Gold Strike Hot Springs (hike)|https://travelnevada.com/hot-springs/gold-strike-hot-spring/,Bowling in many of the local casinos",
+
+      "timeDifference.inProgress": "Wedding In Progress",
+      "timeDifference.upcomingDays": "Only {{d}} Days Away",
+      "timeDifference.upcomingHours": "Only {{h}} Hours Away",
+      "timeDifference.upcomingMinutes": "Only {{m}} Minutes Away",
+      "timeDifference.pastDays": "Just {{d}} Days Ago",
+      "timeDifference.pastHours": "Just {{h}} Hours Ago",
+      "timeDifference.pastMinutes": "Just {{m}} Minutes Ago",
     },
   },
   kr: {

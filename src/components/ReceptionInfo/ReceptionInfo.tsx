@@ -4,14 +4,16 @@ import { AuthData, RSVP_USER, useApiLazyHook } from "../../queries/constants";
 import { mapsLink } from "../../utils/mapLink";
 import { palette } from "../../utils/styles";
 import { Button } from "../Button/Button";
+import { PageName } from "../Dashboard/Dashboard";
 import { ReceptionRsvpForm } from "../ReceptionRsvpForm/ReceptionRsvpForm";
 
 interface Props {
   auth: AuthData;
   refetchAuth: () => Promise<void> | void;
+  navigate: (pageName: Extract<PageName, "info" | "reception-rsvp">) => void;
 }
 
-export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth }) => {
+export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth, navigate }) => {
   const { t } = useTranslation();
   const [showRsvpForm, setShowRsvpForm] = useState(false);
   const [rsvpUser, { loading: savingRsvp }] = useApiLazyHook(RSVP_USER);
@@ -34,10 +36,10 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth }) => {
               reception: receptionData,
             })
               .then(refetchAuth)
-              .then(() => setShowRsvpForm(false));
+              .then(() => [setShowRsvpForm(false), navigate("info")]);
           }}
           auth={auth}
-          onCancel={() => setShowRsvpForm(false)}
+          onCancel={() => [setShowRsvpForm(false), navigate("info")]}
           saving={savingRsvp}
         />
       ) : (
@@ -83,7 +85,8 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth }) => {
             style={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-evenly",
+              justifyContent: "space-between",
+              padding: "0 10px",
               marginBottom: 15,
             }}
           >
@@ -97,14 +100,20 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth }) => {
               <Button
                 label={t("updateRsvp")}
                 color="secondary"
-                onPress={() => setShowRsvpForm(true)}
+                onPress={() => [
+                  setShowRsvpForm(true),
+                  navigate("reception-rsvp"),
+                ]}
               />
             </div>
           ) : (
             <Button
               label={t("setRsvp")}
               color={"primary"}
-              onPress={() => setShowRsvpForm(true)}
+              onPress={() => [
+                setShowRsvpForm(true),
+                navigate("reception-rsvp"),
+              ]}
             />
           )}
         </>

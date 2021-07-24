@@ -8,6 +8,7 @@ import { LoginForm } from "../LoginForm/LoginForm";
 import "./LoginPage.css";
 import { Button } from "../Button/Button";
 import { useWindowSize } from "../../utils/useWindowSize";
+import { useWeddingCountdown } from "./useWeddingCountdown";
 
 type Props = ComponentProps<typeof LoginForm>;
 
@@ -15,6 +16,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   const { t } = useTranslation();
   const [hasClicked, setHasClicked] = useState(false);
   const { width: screenWidth } = useWindowSize();
+  const countdown = useWeddingCountdown();
 
   useEffect(() => {
     pingApi();
@@ -27,16 +29,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   ]);
 
   return (
-    <div
-    // style={{
-    //   minHeight: "75vh",
-    //   backgroundImage: `url(${process.env.PUBLIC_URL}/geoflowers.png)`,
-    //   backgroundPosition: "center",
-    //   backgroundSize: "contain",
-    //   backgroundRepeat: "no-repeat",
-    //   padding: "15vh 20px",
-    // }}
-    >
+    <div>
       <div
         className="splashEnter"
         style={{ backgroundColor: palette.background }}
@@ -75,7 +68,12 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
             >
               <p
                 className="dateLocation"
-                style={{ textAlign: "left", lineHeight: "1em" }}
+                style={{
+                  textAlign: "left",
+                  lineHeight: "1em",
+                  color: palette.primary,
+                  fontWeight: "bold",
+                }}
               >
                 {t("welcome.date")}
                 <br />
@@ -83,12 +81,10 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
               </p>
               <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line1")}</h1>
               <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line2")}</h1>
+
+              <h2 style={{ color: palette.tertiary }}>{countdown}</h2>
             </div>
 
-            {/* <EnterButton
-              onPress={() => setHasClicked(true)}
-              label={t("welcome.enterButton")}
-            /> */}
             <Button
               onPress={() => setHasClicked(true)}
               label={t("welcome.enterButton")}

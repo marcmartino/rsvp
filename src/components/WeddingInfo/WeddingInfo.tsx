@@ -4,6 +4,7 @@ import { AuthData, RSVP_USER, useApiLazyHook } from "../../queries/constants";
 import { mapsLink } from "../../utils/mapLink";
 import { palette } from "../../utils/styles";
 import { Button } from "../Button/Button";
+import { PageName } from "../Dashboard/Dashboard";
 import {
   WeddingFormData,
   WeddingRsvpForm,
@@ -12,9 +13,10 @@ import {
 interface Props {
   auth: AuthData;
   refetchAuth: () => Promise<void> | void;
+  navigate: (pageName: Extract<PageName, "info" | "wedding-rsvp">) => void;
 }
 
-export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
+export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
   const { t } = useTranslation();
   const [showMore, setShowMore] = useState(false);
   const [showRsvpForm, setShowRsvpForm] = useState(false);
@@ -33,7 +35,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
       {showRsvpForm ? (
         <WeddingRsvpForm
           auth={auth}
-          onCancel={() => setShowRsvpForm(false)}
+          onCancel={() => [setShowRsvpForm(false), navigate("info")]}
           onSubmit={(weddingData) => {
             return rsvpUser({
               name: auth.recordName,
@@ -41,7 +43,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
               wedding: weddingData,
             })
               .then(refetchAuth)
-              .then(() => setShowRsvpForm(false));
+              .then(() => [setShowRsvpForm(false), navigate("info")]);
           }}
           saving={savingRsvp}
         />
@@ -86,8 +88,9 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
             style={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-evenly",
+              justifyContent: "space-between",
               marginBottom: 15,
+              padding: "0 10px",
             }}
           >
             <div>{t("welcome.date")}</div>
@@ -140,14 +143,17 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth }) => {
               <Button
                 label={t("updateRsvp")}
                 color="secondary"
-                onPress={() => setShowRsvpForm(true)}
+                onPress={() => [
+                  setShowRsvpForm(true),
+                  navigate("wedding-rsvp"),
+                ]}
               />
             </div>
           ) : (
             <Button
               label={t("setRsvp")}
               color={"primary"}
-              onPress={() => setShowRsvpForm(true)}
+              onPress={() => [setShowRsvpForm(true), navigate("wedding-rsvp")]}
             />
           )}
         </>
