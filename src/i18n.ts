@@ -139,6 +139,8 @@ const resources = {
       "timeDifference.pastDays": "Just {{d}} Days Ago",
       "timeDifference.pastHours": "Just {{h}} Hours Ago",
       "timeDifference.pastMinutes": "Just {{m}} Minutes Ago",
+
+      "rsvpForm.faqWarning": "Please read the FAQ before RSVPing",
     },
   },
   kr: {
