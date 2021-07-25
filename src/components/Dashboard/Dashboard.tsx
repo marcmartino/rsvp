@@ -31,7 +31,6 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
   const { t } = useTranslation();
   const { width: screenWidth } = useWindowSize();
   const [pageName, setPageName] = useState<PageName>("info");
-  console.log(auth);
 
   const width: boolean = (screenWidth || 0) > 500;
 

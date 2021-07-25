@@ -117,7 +117,7 @@ const resources = {
       "questionPage.answer12b":
         "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248.",
       "questionPage.answer12wa":
-        "Furthermore we also have a whatsapp group that you can join which will put you in easy contact with us",
+        "Furthermore we also have a whatsapp group that you can join which will put you in easy contact with us.",
 
       "questionPage.question13": "Do you have a wedding registry?",
       "questionPage.answer13":
