@@ -5,15 +5,14 @@ import take from "lodash/fp/take";
 import map from "lodash/fp/map";
 import { pipe } from "fp-ts/function";
 
-type ImgShape = "square" | "tall" | "wide";
+type ImgShape = "tall" | "wide";
 
 const imageTypeData: Record<
   ImgShape,
   { folderName: string; itemCount: number }
 > = {
-  square: { folderName: "square", itemCount: 9 },
-  tall: { folderName: "3-2", itemCount: 5 },
-  wide: { folderName: "4-3", itemCount: 6 },
+  tall: { folderName: "2-3", itemCount: 75 },
+  wide: { folderName: "3-4", itemCount: 44 },
 };
 
 export const getUniquesFromRange = (rangeMax: number) => (
@@ -38,6 +37,6 @@ export const randomImages = (imageCount = 1) => (
       (imgNum) =>
         `${process.env.PUBLIC_URL}/bgImages/${
           imageTypeData[imgShape].folderName
-        }${screenWidth < 500 ? "/small" : ""}/${imgNum}.jpg`
+        }${screenWidth < 500 ? "/small" : ""}/1 (${imgNum}).jpg`
     )
   );
