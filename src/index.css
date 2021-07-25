@@ -22,12 +22,19 @@ code {
   --secondBackground: #eab69f;
   --primary: #8f5d5d;
   --secondary: #f2cc8f;
+  /* --tertiary: #4352af; */
   --tertiary: #81b29a;
   --disabled: #8c8c8c;
   --error: #8f5d5d;
 }
 
 html {
+}
+a:visited {
+  color: var(--tertiary);
+}
+a {
+  color: var(--primary);
 }
 
 body {

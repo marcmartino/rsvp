@@ -61,23 +61,11 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "80%",
               }}
             >
-              <p
-                className="dateLocation"
-                style={{
-                  textAlign: "left",
-                  lineHeight: "1em",
-                  color: palette.primary,
-                  fontWeight: "bold",
-                }}
-              >
-                {t("welcome.date")}
-                <br />
-                {t("welcome.location")}
-              </p>
               <h1 className="welcomeLine" style={{ lineHeight: "1.1em" }}>
                 {t("welcome.line1")}
               </h1>
@@ -85,7 +73,24 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
                 {t("welcome.line2")}
               </h1>
 
-              <h2 style={{ color: palette.tertiary }}>{countdown}</h2>
+              <p
+                className="dateLocation"
+                style={{
+                  lineHeight: "1em",
+                  color: palette.primary,
+                  fontWeight: "bold",
+                  width: "70%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                <span>{t("welcome.date")}</span>
+                <span>{t("welcome.location")}</span>
+              </p>
+              <h2 style={{ color: palette.tertiary, marginTop: 10 }}>
+                {countdown}
+              </h2>
             </div>
 
             <Button

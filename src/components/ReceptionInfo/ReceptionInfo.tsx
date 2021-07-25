@@ -23,12 +23,12 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth, navigate }) => {
   return (
     <div
       style={{
-        backgroundColor: palette.secondBackground,
+        backgroundColor: palette.background,
         width: "100%",
-        padding: "5px 0 0",
+        padding: "10px 0 0",
       }}
     >
-      <h2>{t("receptionInfo.title")}</h2>
+      <h2 style={{ marginBottom: 10 }}>{t("receptionInfo.title")}</h2>
       {showRsvpForm ? (
         <ReceptionRsvpForm
           onRsvpLinkClick={() => navigate("questions")}

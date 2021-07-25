@@ -8,28 +8,8 @@ function App() {
   const {
     signIn,
     signOut,
-    // results: { data: authData, loading, error },
+    results: { data: authData, loading, error },
   } = useAuth();
-
-  const loading = false;
-  const error = undefined;
-  const authData = {
-    id: 22,
-    displayName: "Mr Juhan Kim ",
-    recordName: "Juhan Kim",
-    zip: "68130",
-    weddingAccess: true,
-    receptionAccess: true,
-    inviteeStatus: "family",
-    familyNames: [
-      "오마하 언니",
-      "오마하 형부",
-      "Ms Sua Kim",
-      "Mr Juhan Kim ",
-      "Esteemed Ehan Kim",
-    ],
-    familyKey: "Omaha Family",
-  };
 
   return (
     <div className="App">

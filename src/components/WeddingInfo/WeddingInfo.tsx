@@ -5,10 +5,7 @@ import { mapsLink } from "../../utils/mapLink";
 import { palette } from "../../utils/styles";
 import { Button } from "../Button/Button";
 import { PageName } from "../Dashboard/Dashboard";
-import {
-  WeddingFormData,
-  WeddingRsvpForm,
-} from "../WeddingRsvpForm/WeddingRsvpForm";
+import { WeddingRsvpForm } from "../WeddingRsvpForm/WeddingRsvpForm";
 
 interface Props {
   auth: AuthData;
@@ -27,12 +24,12 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
   return (
     <div
       style={{
-        backgroundColor: palette.secondBackground,
+        backgroundColor: palette.background,
         width: "100%",
-        padding: "5px 0 0",
+        padding: "10px 0 0",
       }}
     >
-      <h2>{t("weddingInfo.title")}</h2>
+      <h2 style={{ marginBottom: 10 }}>{t("weddingInfo.title")}</h2>
 
       {showRsvpForm ? (
         <WeddingRsvpForm
@@ -93,7 +90,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
               flexDirection: "row",
               justifyContent: "space-between",
               marginBottom: 15,
-              padding: "0 10px",
+              padding: "0 20px",
             }}
           >
             <div>{t("welcome.date")}</div>
@@ -111,7 +108,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
               <a
                 href="#"
                 style={{
-                  padding: "10px 10px 10px 0",
+                  padding: "10px 20px 10px 0",
                   color: palette.primary,
                 }}
                 onClick={() => setShowMore(true)}
@@ -142,7 +139,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
           {auth?.weddingAcceptedCount !== undefined &&
           auth?.weddingDeclinedCount !== undefined ? (
             <div>
-              {t("weddingRsvp.set")}
+              {/* {t("weddingRsvp.set")} */}
               <Button
                 label={t("updateRsvp")}
                 color="secondary"

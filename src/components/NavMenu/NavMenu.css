@@ -5,6 +5,7 @@
   cursor: ponter;
   user-select: none;
   margin-right: 10px;
+  color: var(--background);
 }
 
 .hamburgerMenuContainer {

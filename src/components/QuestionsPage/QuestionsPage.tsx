@@ -45,9 +45,6 @@ export const QuestionsPage: FC<Props> = ({ auth }) => {
 
             <div className="question">{t("questionPage.question6")}</div>
             <div className="answer">{t("questionPage.answer6")}</div>
-
-            <div className="question">{t("questionPage.question5")}</div>
-            <div className="answer">{t("questionPage.answer5")}</div>
           </>
         )}
 
@@ -72,57 +69,6 @@ export const QuestionsPage: FC<Props> = ({ auth }) => {
 
         <div className="question">{t("questionPage.question13")}</div>
         <div className="answer">{t("questionPage.answer13")}</div>
-
-        <div className="question">{t("questionPage.question14")}</div>
-        <div className="answer">{t("questionPage.answer14")}</div>
-
-        <div className="question">{t("questionPage.question15")}</div>
-        <div className="answer">
-          <ul>
-            {t("questionPage.answer15")
-              .split(",")
-              .map((a) => {
-                const splitA = a.split("|");
-                return splitA.length === 1 ? (
-                  <li>{splitA[0]}</li>
-                ) : (
-                  <li>
-                    <a
-                      href={splitA[1]}
-                      referrerPolicy="no-referrer"
-                      target="_blank"
-                    >
-                      {splitA[0]}
-                    </a>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
-
-        <div className="question">{t("questionPage.question16")}</div>
-        <div className="answer">
-          <ul>
-            {t("questionPage.answer16")
-              .split(",")
-              .map((a) => {
-                const splitA = a.split("|");
-                return splitA.length === 1 ? (
-                  <li>{splitA[0]}</li>
-                ) : (
-                  <li>
-                    <a
-                      href={splitA[1]}
-                      referrerPolicy="no-referrer"
-                      target="_blank"
-                    >
-                      {splitA[0]}
-                    </a>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
       </div>
     </div>
   );
