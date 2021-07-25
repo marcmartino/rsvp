@@ -127,8 +127,10 @@ const resources = {
       "questionPage.answer14":
         "There are lots of ways to get downtown or strip! There are several car rental options, and Lyft and Uber are relatively inexpensive. " +
         "Every MGM property casino & hotel charges a parking fee. These casino hotels below offer free parking: Wynn, Treasure Island, Venetian, or Wynn.",
-      "visitingVegas.placesToEat": "Places we can recommend to eat in vegas.",
+      "visitingVegas.placesToEat":
+        "Can you recommend anywhere to eat in Vegas?",
       "visitingVegas.placesToEatList":
+        "JINYA RAMEN BAR|https://www.jinyaramenbar.com/search/?query=las+vegas&referrerPageUrl=https%3A%2F%2Fwww.jinyaramenbar.com%2Flocations%2F/," +
         "Tacos El Gordo|http://tacoselgordobc.com/locations/,Sushi Neko|https://www.yelp.com/biz/sushi-neko-las-vegas,Master Kim’s Korean BBQ|https://masterkimslv.com/," +
         "Lotus of Siam|https://lotusofsiamlv.com/," +
         "Nabe Hot Pot|https://www.yelp.com/biz/nabe-hotpot-las-vegas,Shanghai Plaza (So many good dessert options)|https://vegas.eater.com/venue/56581/shanghai-plaza," +
@@ -248,28 +250,39 @@ const resources = {
         "마크 (702) 290-2481 혹은 지은 (702) 410-3248. 만약 마크와 지은이가 전화/문자 답장이 없으면, 마크의 누나 Stephanie (702) 756-4612 에게 문의해주세요.",
       "questionPage.answer12b": "마크 (702) 290-2481 또는 지은 (702) 410-3248.",
 
+      "questionPage.answer12wa":
+        "그 외에 다른 질문이 있으실 경우에는 저희 웨딩 whatsapp group 에 들어오셔서 질문해주시면 빨른 답장을 받으실수있을겁니다.",
+
       "questionPage.question13": "웨딩 레지스트리 있나요?",
       "questionPage.answer13":
         "여러분들이 참여해주셔서 저희의 결혼을 축하해주시는 것만으로도 큰 선물입니다. 하지만, 꼭 결혼선물을 주시고 싶다하시면 저희의 허니문 펀드에 현금으로 기부해주시면 대단히 감사하겠습니다.",
       "questionPage.question14": "베가스 구경하려면 대중교통은 어떻게 되나요?",
       "questionPage.answer14":
         "베가스의 대중교통 여건이 잘 되어 있지않아서, 공항에서 자동차 렌탈을 추천해드립니다. 그 외에는 Lyft 또는 Uber 사용을 추천해드립니다. 대부분 라스베가스 타운 안에서의 주차는 무료지만, 스트립을 방문하시게 될 경우 모든 MGM 계열 casino & hotel은 유료 주차이오니 피해주시고, Treasure Island, Venetian, Palazzo 그리고 Wynn 은 무료주차 가능한 호텔입니다.",
-      "questionPage.question15":
-        "마크랑 지은이가 좋아하는 베가스 맛집 추천해주세요?",
-      "questionPage.answer15":
-        "JINYA RAMEN BAR|https://www.jinyaramenbar.com/search/?query=las+vegas&referrerPageUrl=https%3A%2F%2Fwww.jinyaramenbar.com%2Flocations%2F,Tacos El Gordo|http://tacoselgordobc.com/locations/,Sushi Neko|https://www.yelp.com/biz/sushi-neko-las-vegas,Master Kim’s Korean BBQ|https://masterkimslv.com/,Lotus of Siam|https://lotusofsiamlv.com/,Nabe Hot Pot|https://www.yelp.com/biz/nabe-hotpot-las-vegas,Shanghai Plaza (So many good dessert options)|https://vegas.eater.com/venue/56581/shanghai-plaza,Mint Indian|https://www.mintbistro.com/",
-      "questionPage.question16":
-        "마크랑 지은이가 즐겨하는 데이트 장소 추천해주세요?",
+      "visitingVegas.placesToEat": "마크랑 지은이가 추천하는 베가스 맛집?",
+      "visitingVegas.placesToEatList":
+        "JINYA RAMEN BAR|https://www.jinyaramenbar.com/search/?query=las+vegas&referrerPageUrl=https%3A%2F%2Fwww.jinyaramenbar.com%2Flocations%2F/," +
+        "Tacos El Gordo|http://tacoselgordobc.com/locations/,Sushi Neko|https://www.yelp.com/biz/sushi-neko-las-vegas,Master Kim’s Korean BBQ|https://masterkimslv.com/," +
+        "Lotus of Siam|https://lotusofsiamlv.com/," +
+        "Nabe Hot Pot|https://www.yelp.com/biz/nabe-hotpot-las-vegas,Shanghai Plaza (So many good dessert options)|https://vegas.eater.com/venue/56581/shanghai-plaza," +
+        "Mint Indian|https://www.mintbistro.com/",
+
+      "questionPage.question16": "마크랑 지은이가 추천하는 베가스 놀거리?",
       "questionPage.answer16":
-        "베네시안/팔라조 호텔 내 구경하기,벨라지오 가든 구경하기,Game Nest Arcade|http://www.gamenestlv.com/,Area 15|https://area15.com/,Red Rock Canyon|https://www.redrockcanyonlv.org/,Gold Strike Hot Springs (hike)|https://travelnevada.com/hot-springs/gold-strike-hot-spring/,Bowling in many of the local casinos",
+        "베네시안/팔라조 호텔 내 구경하기,벨라지오 가든 구경하기,카지노 호텔내 볼링장에서 볼링치기,Game Nest Arcade|http://www.gamenestlv.com/,Area 15|https://area15.com/,Red Rock Canyon|https://www.redrockcanyonlv.org/,Gold Strike Hot Springs (hike)|https://travelnevada.com/hot-springs/gold-strike-hot-spring/",
 
       "timeDifference.inProgress": "Wedding In Progress",
-      "timeDifference.upcomingDays": "결혼 전 D - {{d}}",
+      "timeDifference.upcomingDays": "결혼 D - {{d}}",
       "timeDifference.upcomingHours": "Only {{h}} Hours Away",
       "timeDifference.upcomingMinutes": "Only {{m}} Minutes Away",
       "timeDifference.pastDays": "Just {{d}} Days Ago",
       "timeDifference.pastHours": "Just {{h}} Hours Ago",
       "timeDifference.pastMinutes": "Just {{m}} Minutes Ago",
+
+      "rsvpForm.faqWarning":
+        "오른쪽 상단 메뉴에 질문을 읽어주신 후에 참석여부 등록바랍니다.",
+      "visitingVegas.title": "베가스 여행",
+      "menuItem.visitingVegas": "베가스 여행",
     },
   },
 };
@@ -281,7 +294,7 @@ i18n
     resources,
     fallbackLng: "en",
     // load: ["en", "kr"],
-    // lng: "kr",
+    //lng: "kr",
     // lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
