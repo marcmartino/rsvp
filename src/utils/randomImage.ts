@@ -27,16 +27,16 @@ export const getUniquesFromRange = (rangeMax: number) => (
   );
 
 export const randomImages = (imageCount = 1) => (
-  imgShape: ImgShape,
-  screenWidth: number
+  imgShape: ImgShape
 ): string[] =>
   pipe(
     imageCount,
     getUniquesFromRange(imageTypeData[imgShape].itemCount),
     map(
       (imgNum) =>
-        `${process.env.PUBLIC_URL}/bgImages/${
-          imageTypeData[imgShape].folderName
-        }${screenWidth < 500 ? "/small" : ""}/1 (${imgNum}).jpg`
+        // "image-set(" +
+        `${process.env.PUBLIC_URL}/bgImages/${imageTypeData[imgShape].folderName}/small/${imgNum}.jpg 500w,` +
+        `${process.env.PUBLIC_URL}/bgImages/${imageTypeData[imgShape].folderName}/${imgNum}.jpg 1200w`
+      // + ")"
     )
   );

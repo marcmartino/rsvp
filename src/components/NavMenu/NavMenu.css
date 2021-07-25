@@ -33,6 +33,6 @@
   .hamburgerMenuContainer {
     width: 30vw;
     max-width: 200px;
-    margin-right: 3vw;
+    margin-right: 0;
   }
 }

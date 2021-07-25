@@ -7,11 +7,18 @@
   height: 40vh;
   background-color: var(--background);
 }
+.splashEnter {
+  height: 100vh;
+  overflow: hidden;
+}
 
 .backgroundImage {
   background-size: cover;
   background-position: center;
   height: 30vh;
+  width: 100vw;
+  object-fit: cover;
+  border-width: 0;
 }
 
 @media screen and (min-width: 500px) {
@@ -19,7 +26,8 @@
     display: none;
   }
   .backgroundImage {
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
   .loginPageContent {
     width: 300px;
