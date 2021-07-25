@@ -33,11 +33,10 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
 
   const width: boolean = (screenWidth || 0) > 500;
 
-  const bgImage = useMemo(
-    () => randomImages(1)(width ? "wide" : "tall", screenWidth || 0),
-    [width]
-  );
-
+  const bgImage = useMemo(() => randomImages(1)(width ? "wide" : "tall"), [
+    width,
+  ]);
+  console.log(bgImage);
   return (
     <div
       style={{
@@ -52,12 +51,17 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
         {t("userGreeting", { name: auth.displayName })}
         <NavMenu currentPageName={pageName} navigate={setPageName} />
       </h1>
-      <div
-        className="dashboard"
-        style={{
-          ...(bgImage ? { backgroundImage: `url(${bgImage[0]})` } : {}),
-        }}
-      >
+      <div className="dashboard">
+        <img
+          sizes="(max-width: 500px) 500px, 1200w"
+          srcSet={bgImage[0]}
+          className="bgImage"
+          style={{
+            height: "30vh",
+            width: "100vw",
+            objectFit: "cover",
+          }}
+        />
         <div className="bottomDashboard">
           {pageName === "gallery" && (
             <div style={{ marginTop: 10, marginBottom: 10 }}>

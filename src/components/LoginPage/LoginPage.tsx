@@ -15,18 +15,16 @@ type Props = ComponentProps<typeof LoginForm>;
 export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   const { t } = useTranslation();
   const [hasClicked, setHasClicked] = useState(false);
-  const { width: screenWidth } = useWindowSize();
   const countdown = useWeddingCountdown();
 
   useEffect(() => {
     pingApi();
   }, []);
 
-  const width: boolean = (screenWidth || 0) > 500;
-
-  const images = useMemo(() => randomImages(2)("wide", screenWidth || 0), [
-    width,
+  const images = useMemo(() => randomImages(2)("wide"), [
+    // width,
   ]);
+  console.log(images);
 
   return (
     <div>
@@ -34,13 +32,14 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
         className="splashEnter"
         style={{ backgroundColor: palette.background }}
       >
-        <div
+        <img
+          sizes="(max-width: 500px) 500px, 1200w"
+          srcSet={images[0]}
           className="topImage"
           style={{
             height: "30vh",
-            backgroundImage: `url('${images ? images[0] : ""}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            width: "100vw",
+            objectFit: "cover",
           }}
         />
         {hasClicked ? (
@@ -79,8 +78,12 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
                 <br />
                 {t("welcome.location")}
               </p>
-              <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line1")}</h1>
-              <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line2")}</h1>
+              <h1 className="welcomeLine" style={{ lineHeight: "1.1em" }}>
+                {t("welcome.line1")}
+              </h1>
+              <h1 className="welcomeLine" style={{ lineHeight: "1.1em" }}>
+                {t("welcome.line2")}
+              </h1>
 
               <h2 style={{ color: palette.tertiary }}>{countdown}</h2>
             </div>
@@ -91,11 +94,11 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
             />
           </a>
         )}
-        <div
+        <img
           className="backgroundImage"
-          style={{
-            backgroundImage: `url('${images ? images[1] : ""}')`,
-          }}
+          sizes="(max-width: 500px) 500px, 100vw"
+          srcSet={images[1]}
+          style={{}}
         />
       </div>
     </div>

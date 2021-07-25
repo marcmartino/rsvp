@@ -10,7 +10,9 @@ import { ReceptionRsvpForm } from "../ReceptionRsvpForm/ReceptionRsvpForm";
 interface Props {
   auth: AuthData;
   refetchAuth: () => Promise<void> | void;
-  navigate: (pageName: Extract<PageName, "info" | "reception-rsvp">) => void;
+  navigate: (
+    pageName: Extract<PageName, "info" | "reception-rsvp" | "questions">
+  ) => void;
 }
 
 export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth, navigate }) => {
@@ -29,6 +31,7 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth, navigate }) => {
       <h2>{t("receptionInfo.title")}</h2>
       {showRsvpForm ? (
         <ReceptionRsvpForm
+          onRsvpLinkClick={() => navigate("questions")}
           onSubmit={(receptionData) => {
             return rsvpUser({
               name: auth.recordName,

@@ -19,8 +19,8 @@ const resources = {
       coupleGreeting: "Welcome {{name}} and {{soName}}",
       "welcome.date": "10.23.2021",
       "welcome.location": "Las Vegas, NV",
-      "welcome.line1": "Jenna (Jieun) &",
-      "welcome.line2": "Marc",
+      "welcome.line1": "Jenna (Jieun)",
+      "welcome.line2": "& Marc",
       "welcome.enterButton": "RSVP",
       "receptionInfo.title": "Reception",
       "receptionInfo.location": "The Blind Center",
@@ -143,6 +143,8 @@ const resources = {
       "timeDifference.pastDays": "Just {{d}} Days Ago",
       "timeDifference.pastHours": "Just {{h}} Hours Ago",
       "timeDifference.pastMinutes": "Just {{m}} Minutes Ago",
+
+      "rsvpForm.faqWarning": "Please read the FAQ before RSVPing",
     },
   },
   kr: {

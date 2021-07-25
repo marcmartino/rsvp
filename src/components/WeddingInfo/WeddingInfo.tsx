@@ -13,7 +13,9 @@ import {
 interface Props {
   auth: AuthData;
   refetchAuth: () => Promise<void> | void;
-  navigate: (pageName: Extract<PageName, "info" | "wedding-rsvp">) => void;
+  navigate: (
+    pageName: Extract<PageName, "info" | "wedding-rsvp" | "questions">
+  ) => void;
 }
 
 export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
@@ -45,6 +47,7 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
               .then(refetchAuth)
               .then(() => [setShowRsvpForm(false), navigate("info")]);
           }}
+          onRsvpLinkClick={() => navigate("questions")}
           saving={savingRsvp}
         />
       ) : (

@@ -8,22 +8,13 @@ import { Button } from "../Button/Button";
 export type ReceptionFormData = NonNullable<
   OutputOf<typeof rsvpBody>["reception"]
 >;
-/*
-type ReceptionFormData = {
-    foodPreferences: ("vegetarian" | "pescetarian" | "chicken" | "beef")[];
-    attendeeNames: string[];
-    childrenAttendingCount: number;
-} & {
-    acceptCount: number;
-    declineCount: number;
-    notes: string;
-}*/
 
 interface Props {
   auth: AuthData;
   onCancel: () => void;
   onSubmit: (values: ReceptionFormData) => void;
   saving: boolean;
+  onRsvpLinkClick: () => void;
 }
 
 export const ReceptionRsvpForm: FC<Props> = ({
@@ -31,6 +22,7 @@ export const ReceptionRsvpForm: FC<Props> = ({
   onCancel,
   onSubmit,
   saving,
+  onRsvpLinkClick,
 }) => {
   const { t } = useTranslation();
   const [famNamesCache, setFamNamesCache] = useState<string[]>([]);
@@ -198,6 +190,11 @@ export const ReceptionRsvpForm: FC<Props> = ({
             setRsvpData((rsvp) => ({ ...rsvp, notes: e.target.value }))
           }
         />
+        <div>
+          <a onClick={() => onRsvpLinkClick()} style={{}} href="#">
+            {t("rsvpForm.faqWarning")}
+          </a>
+        </div>
       </div>
 
       <Button label={t("cancel")} color="cancel" onPress={onCancel} />

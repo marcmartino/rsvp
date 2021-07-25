@@ -12,6 +12,7 @@ interface Props {
   onCancel: () => void;
   onSubmit: (values: WeddingFormData) => void;
   saving: boolean;
+  onRsvpLinkClick: () => void;
 }
 
 export const WeddingRsvpForm: FC<Props> = ({
@@ -19,6 +20,7 @@ export const WeddingRsvpForm: FC<Props> = ({
   onCancel,
   onSubmit,
   saving,
+  onRsvpLinkClick,
 }) => {
   const { t } = useTranslation();
   const [rsvpData, setRsvpData] = useState<
@@ -100,6 +102,11 @@ export const WeddingRsvpForm: FC<Props> = ({
             setRsvpData((rsvp) => ({ ...rsvp, notes: e.target.value }))
           }
         />
+        <div>
+          <a onClick={() => onRsvpLinkClick()} style={{}} href="#">
+            {t("rsvpForm.faqWarning")}
+          </a>
+        </div>
       </div>
 
       <Button label={t("cancel")} color="cancel" onPress={onCancel} />
