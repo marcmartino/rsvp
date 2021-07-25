@@ -126,6 +126,7 @@ const resources = {
         "Every MGM property casino & hotel charges a parking fee. These casino hotels below offer free parking: Wynn, Treasure Island, Venetian, or Wynn.",
       "questionPage.question15": "Can you recommend anywhere to eat in Vegas?",
       "questionPage.answer15":
+        "JINYA RAMEN BAR|https://www.jinyaramenbar.com/search/?query=las+vegas&referrerPageUrl=https%3A%2F%2Fwww.jinyaramenbar.com%2Flocations%2F/," +
         "Tacos El Gordo|http://tacoselgordobc.com/locations/,Sushi Neko|https://www.yelp.com/biz/sushi-neko-las-vegas,Master Kim’s Korean BBQ|https://masterkimslv.com/," +
         "Lotus of Siam|https://lotusofsiamlv.com/," +
         "Nabe Hot Pot|https://www.yelp.com/biz/nabe-hotpot-las-vegas,Shanghai Plaza (So many good dessert options)|https://vegas.eater.com/venue/56581/shanghai-plaza," +
