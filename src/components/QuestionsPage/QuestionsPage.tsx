@@ -65,6 +65,20 @@ export const QuestionsPage: FC<Props> = ({ auth }) => {
               ? "questionPage.answer12b"
               : "questionPage.answer12"
           )}
+          {auth.recordName !== "Dad Martino" && (
+            <>
+              <br />
+              <a
+                href={`https://chat.whatsapp.com/${
+                  "LrquvAmJfG40pXa0HRHciV" + ""
+                }`}
+                target="_blank"
+                referrerPolicy="no-referrer"
+              >
+                {t("questionPage.answer12wa")}
+              </a>
+            </>
+          )}
         </div>
 
         <div className="question">{t("questionPage.question13")}</div>

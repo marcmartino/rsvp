@@ -38,7 +38,6 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
   const bgImage = useMemo(() => randomImages(1)(width ? "wide" : "tall"), [
     width,
   ]);
-  console.log(bgImage);
   return (
     <div
       style={{
@@ -62,7 +61,8 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
           className="bgImage"
           style={{
             height: "30vh",
-            width: "100vw",
+            width: "100%",
+            maxWidth: "100vw",
             objectFit: "cover",
           }}
         />

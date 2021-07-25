@@ -116,6 +116,8 @@ const resources = {
         "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248. If we don’t answer your phone or text message, please reach out to our sister, Stephanie with a question at (702) 756-4612.",
       "questionPage.answer12b":
         "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248.",
+      "questionPage.answer12wa":
+        "Furthermore we also have a whatsapp group that you can join which will put you in easy contact with us",
 
       "questionPage.question13": "Do you have a wedding registry?",
       "questionPage.answer13":
