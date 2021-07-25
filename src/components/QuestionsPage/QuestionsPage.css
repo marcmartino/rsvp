@@ -1,5 +1,5 @@
 .questionPage {
-  background-color: var(--secondBackground);
+  background-color: var(--background);
   width: 100%;
   padding: 0;
   align-items: flex-start;
@@ -13,6 +13,7 @@
 
 .questionPage .question {
   font-weight: bold;
+  color: var(--cta);
 }
 .questionPage .answer {
   margin-bottom: 10px;

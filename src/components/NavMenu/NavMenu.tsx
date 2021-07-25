@@ -29,6 +29,11 @@ export const NavMenu: FC<Props> = ({ currentPageName, navigate }) => {
               {t("menuItem.faqs")}
             </a>
           )}
+          {currentPageName !== "visiting-vegas" && (
+            <a onClick={() => [navigate("visiting-vegas"), setMenuOpen(false)]}>
+              {t("menuItem.visitingVegas")}
+            </a>
+          )}
           {currentPageName !== "gallery" && (
             <a onClick={() => [navigate("gallery"), setMenuOpen(false)]}>
               {t("menuItem.gallery")}

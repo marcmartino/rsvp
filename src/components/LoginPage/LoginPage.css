@@ -6,6 +6,7 @@
   text-decoration: none;
   height: 40vh;
   background-color: var(--background);
+  text-align: center;
 }
 .splashEnter {
   height: 100vh;
@@ -22,6 +23,13 @@
 }
 .welcomeLine {
   font-family: var(--cursive-font);
+  text-align: center;
+  width: 100%;
+}
+.dateLocation {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 @media screen and (min-width: 500px) {
@@ -39,8 +47,5 @@
     max-width: 400px;
     right: 3vw;
     top: 30vh;
-  }
-  .dateLocation {
-    margin-bottom: 14px;
   }
 }

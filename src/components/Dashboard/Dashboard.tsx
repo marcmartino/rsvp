@@ -9,6 +9,7 @@ import { GalleryPage } from "../GalleryPage/GalleryPage";
 import { NavMenu } from "../NavMenu/NavMenu";
 import { QuestionsPage } from "../QuestionsPage/QuestionsPage";
 import { ReceptionInfo } from "../ReceptionInfo/ReceptionInfo";
+import { VisitingVegasPage } from "../VisitingVegasPage/VisitingVegasPage";
 import { WeddingInfo } from "../WeddingInfo/WeddingInfo";
 import "./Dashboard.css";
 
@@ -23,20 +24,19 @@ export type PageName =
   | "wedding-rsvp"
   | "reception-rsvp"
   | "questions"
-  | "gallery";
+  | "gallery"
+  | "visiting-vegas";
 
 export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
   const { t } = useTranslation();
   const { width: screenWidth } = useWindowSize();
   const [pageName, setPageName] = useState<PageName>("info");
-  console.log(auth);
 
   const width: boolean = (screenWidth || 0) > 500;
 
   const bgImage = useMemo(() => randomImages(1)(width ? "wide" : "tall"), [
     width,
   ]);
-  console.log(bgImage);
   return (
     <div
       style={{
@@ -48,7 +48,9 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
     >
       <h1 className="greeting">
         <div> </div>
-        {t("userGreeting", { name: auth.displayName })}
+        <div className="welcomeText">
+          {t("userGreeting", { name: auth.displayName })}
+        </div>
         <NavMenu currentPageName={pageName} navigate={setPageName} />
       </h1>
       <div className="dashboard">
@@ -58,11 +60,17 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
           className="bgImage"
           style={{
             height: "30vh",
-            width: "100vw",
+            width: "100%",
+            maxWidth: "100vw",
             objectFit: "cover",
           }}
         />
         <div className="bottomDashboard">
+          {pageName === "visiting-vegas" && (
+            <div style={{ marginTop: 10, marginBottom: 10 }}>
+              <VisitingVegasPage />
+            </div>
+          )}
           {pageName === "gallery" && (
             <div style={{ marginTop: 10, marginBottom: 10 }}>
               <GalleryPage />

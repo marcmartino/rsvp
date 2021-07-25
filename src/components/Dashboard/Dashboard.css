@@ -5,6 +5,12 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  z-index: 1;
+}
+
+.greeting .welcomeText {
+  line-height: 1.7em;
+  font-family: var(--cursive-font);
 }
 
 .text {

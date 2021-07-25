@@ -17,8 +17,8 @@ const resources = {
       "loginPage.submitButton": "Log In",
       userGreeting: "Welcome, {{name}}",
       coupleGreeting: "Welcome {{name}} and {{soName}}",
-      "welcome.date": "10.23.2021",
-      "welcome.location": "Las Vegas, NV",
+      "welcome.date": "October 23 2021",
+      "welcome.location": "Las Vegas, Nevada",
       "welcome.line1": "Jenna (Jieun)",
       "welcome.line2": "& Marc",
       "welcome.enterButton": "RSVP",
@@ -37,7 +37,7 @@ const resources = {
       "weddingVenue.address": "Las Vegas, NV 89161",
       clickForMap: "🗺️",
       "weddingRsvp.set": "Wedding RSVP already set",
-      updateRsvp: "Update RSVP",
+      updateRsvp: "RSVP Already Submitted",
       setRsvp: "RSVP Here",
       weddingDescriptionText: `Our ceremony will be held at the 
       Red Spring boardwalk platform
@@ -116,6 +116,8 @@ const resources = {
         "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248. If we don’t answer your phone or text message, please reach out to our sister, Stephanie with a question at (702) 756-4612.",
       "questionPage.answer12b":
         "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248.",
+      "questionPage.answer12wa":
+        "Furthermore we also have a whatsapp group that you can join which will put you in easy contact with us.",
 
       "questionPage.question13": "Do you have a wedding registry?",
       "questionPage.answer13":
@@ -124,8 +126,9 @@ const resources = {
       "questionPage.answer14":
         "There are lots of ways to get downtown or strip! There are several car rental options, and Lyft and Uber are relatively inexpensive. " +
         "Every MGM property casino & hotel charges a parking fee. These casino hotels below offer free parking: Wynn, Treasure Island, Venetian, or Wynn.",
-      "questionPage.question15": "Can you recommend anywhere to eat in Vegas?",
-      "questionPage.answer15":
+      "visitingVegas.placesToEat":
+        "Can you recommend anywhere to eat in Vegas?",
+      "visitingVegas.placesToEatList":
         "JINYA RAMEN BAR|https://www.jinyaramenbar.com/search/?query=las+vegas&referrerPageUrl=https%3A%2F%2Fwww.jinyaramenbar.com%2Flocations%2F/," +
         "Tacos El Gordo|http://tacoselgordobc.com/locations/,Sushi Neko|https://www.yelp.com/biz/sushi-neko-las-vegas,Master Kim’s Korean BBQ|https://masterkimslv.com/," +
         "Lotus of Siam|https://lotusofsiamlv.com/," +
@@ -146,6 +149,8 @@ const resources = {
       "timeDifference.pastMinutes": "Just {{m}} Minutes Ago",
 
       "rsvpForm.faqWarning": "Please read the FAQ before RSVPing",
+      "visitingVegas.title": "Visiting Vegas",
+      "menuItem.visitingVegas": "Visiting Vegas",
     },
   },
   kr: {
@@ -276,7 +281,7 @@ i18n
     resources,
     fallbackLng: "en",
     // load: ["en", "kr"],
-    lng: "kr",
+    // lng: "kr",
     // lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option

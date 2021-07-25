@@ -11,7 +11,6 @@ export const GalleryPage: FC<Props> = ({}) => {
     <div
       style={{
         backgroundColor: palette.background,
-        width: "100%",
         padding: 10,
         minHeight: "50vh",
         display: "flex",
