@@ -20,6 +20,9 @@
   object-fit: cover;
   border-width: 0;
 }
+.welcomeLine {
+  font-family: var(--cursive-font);
+}
 
 @media screen and (min-width: 500px) {
   .topImage {

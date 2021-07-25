@@ -19,8 +19,8 @@ const resources = {
       coupleGreeting: "Welcome {{name}} and {{soName}}",
       "welcome.date": "10.23.2021",
       "welcome.location": "Las Vegas, NV",
-      "welcome.line1": "Jenna (Jieun) &",
-      "welcome.line2": "Marc",
+      "welcome.line1": "Jenna (Jieun)",
+      "welcome.line2": "& Marc",
       "welcome.enterButton": "RSVP",
       "receptionInfo.title": "Reception",
       "receptionInfo.location": "The Blind Center",
@@ -193,7 +193,7 @@ i18n
     resources,
     fallbackLng: "en",
     // load: ["en", "kr"],
-    // lng: "kr",
+    lng: "kr",
     // lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option

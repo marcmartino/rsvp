@@ -78,8 +78,12 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
                 <br />
                 {t("welcome.location")}
               </p>
-              <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line1")}</h1>
-              <h1 style={{ lineHeight: "1.1em" }}>{t("welcome.line2")}</h1>
+              <h1 className="welcomeLine" style={{ lineHeight: "1.1em" }}>
+                {t("welcome.line1")}
+              </h1>
+              <h1 className="welcomeLine" style={{ lineHeight: "1.1em" }}>
+                {t("welcome.line2")}
+              </h1>
 
               <h2 style={{ color: palette.tertiary }}>{countdown}</h2>
             </div>

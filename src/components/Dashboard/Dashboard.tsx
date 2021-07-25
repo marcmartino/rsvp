@@ -51,14 +51,7 @@ export const Dashboard: FC<Props> = ({ auth, signout, refetchAuth }) => {
         {t("userGreeting", { name: auth.displayName })}
         <NavMenu currentPageName={pageName} navigate={setPageName} />
       </h1>
-      <div
-        className="dashboard"
-        style={
-          {
-            // ...(bgImage ? { backgroundImage: `url(${bgImage[0]})` } : {}),
-          }
-        }
-      >
+      <div className="dashboard">
         <img
           sizes="(max-width: 500px) 500px, 1200w"
           srcSet={bgImage[0]}
