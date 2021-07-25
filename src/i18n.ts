@@ -95,7 +95,7 @@ const resources = {
       "questionPage.answer4c": "Yes they are!",
       "questionPage.question5": "What will the weather be like?",
       "questionPage.answer5":
-        "Welcome to Las Vegas, all of you out-of-towners! The weather in October can be somewhat cooler weather, providing a little break from the desert's relentless heat. The average low temperature is 46 °F (8°C) while highs still reach into the 80 °F (27 °C) range. During the day, expect lots of sunshine—the average rainfall for October is only 0.3 inches. When the sun sets, the desert city gets cool very quickly. Please bring some warm layers for the evening, we don't want anyone freezing their bu… well you get the point. ;)",
+        "Welcome to Las Vegas, all of you out-of-towners! The weather in October can be somewhat cooler weather, providing a little break from the desert's relentless heat. The average low temperature is 46°F while highs still reach into the 80°F range. During the day, expect lots of sunshine—the average rainfall for October is only 0.3 inches. When the sun sets, the desert city gets cool very quickly. Please bring some warm layers for the evening. ;)",
       "questionPage.question6": "Where should I park?",
       "questionPage.answer6": "Red Spring Boardwalk offers free parking.",
       "questionPage.question7": "What should I wear?",
