@@ -73,7 +73,7 @@ const resources = {
 
       "galleryPage.comingSoon": "Gallery Coming After the Wedding",
       "galleryPage.instruction":
-        "Please tag images shared on social media with the tag #JieunAndMarc2021 so we can agreggate them here after the wedding.",
+        "Please tag images shared on social media with the tag #TheMartinos2021 so we can agreggate them here after the wedding.",
 
       "questionsPage.title": "Common Questions",
       "questionPage.question1":
@@ -207,7 +207,7 @@ const resources = {
 
       "galleryPage.comingSoon": "사진은 결혼식 후에 업로드 될 예정입니다.",
       "galleryPage.instruction":
-        "결혼식에서 찍으신 사진들을 소셜 미디어에 #JieunAndMarc2021 태그로 쉐어해주세요.",
+        "결혼식에서 찍으신 사진들을 소셜 미디어에 #TheMartinos2021 태그로 쉐어해주세요.",
 
       "questionsPage.title": "궁금하신 점들",
       "questionPage.question1":
