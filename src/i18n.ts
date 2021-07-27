@@ -111,7 +111,7 @@ const resources = {
       "questionPage.question11":
         "Is it okay to take pictures with our phones and cameras during the wedding?",
       "questionPage.answer11":
-        "Yes! We would love for you to take photos/videos and share them with us via whatsapp, google photo, or text message. For Instagram or FB, please use #MarcAndJenna2021 so we can fill up the gallery with all your beautiful images.",
+        "Yes! We would love for you to take photos/videos and share them with us via whatsapp, google photo, or text message. For Instagram or FB, please use #TheMartinos2021 so we can fill up the gallery with all your beautiful images.",
       "questionPage.question12": "Whom should I call with questions?",
       "questionPage.answer12":
         "Marc (702)290-2481 or Jenna(Jieun) (702)410-3248. If we don’t answer your phone or text message, please reach out to our sister, Stephanie with a question at (702) 756-4612.",
@@ -185,7 +185,7 @@ const resources = {
       updateRsvp: "참석여부 수정하기",
       setRsvp: "참석여부를 알려주세요",
       weddingDescriptionText: `저희 결혼식은 레드락 국립공원 옆에 위치한 레드 스프링 보드웍 플랫폼에서 진행 될 예정입니다.
-      식은 정확히 오전 10:30에 시작되어 대략 30분 정도 소요될 예정이오니 미리 오셔서 자리에 앉아 기다려 주시길 바랍니다.
+      식은 정확히 오전 10:30에 시작되어 대략 30분 정도 소요될 예정이오니 미리 오셔서 자리에 앉아 기다려 주시면 감사하겠습니다.
       예식 장소까지는 구글맵 혹은 사용하시는 핸드폰지도 어플에 "Red Spring Picnic Area" 라고 치시고 찾아오시면 됩니다. 
       주차장에 차를 주차하신 후, 공원 내 서쪽으로 피크닉 테이블이 보이는 곳으로 쭉 걸어오시면 끝자락에 보드웍으로 들어가는 입구가 보이실겁니다.
       보드웍을 따라서 쭉 따라 오시면 저희가 식을 올릴 플랫폼이 보이실겁니다.
@@ -203,7 +203,7 @@ const resources = {
       familyMemberName: "게스트 성함 {{number}}",
       childrenAttendingCount: "참여가능 어린이 인원",
       "menuItem.home": "Home",
-      "menuItem.faqs": "질문하기",
+      "menuItem.faqs": "결혼식 Q&A",
       "menuItem.gallery": "사진보기",
 
       "galleryPage.comingSoon": "사진은 결혼식 후에 업로드 될 예정입니다.",
@@ -239,13 +239,13 @@ const resources = {
       "questionPage.answer8": "결혼식은 야외에서 진행됩니다.",
       "questionPage.question9": "신발은 어떻게 신어야 하나요?",
       "questionPage.answer9":
-        "여성분들! 주차장에서부터 결혹식 플랫폼까지 대략 800미터를 걸어오셔야 합니다. 그러므로 걷기에 지장이 없으신 편한 플랫슈즈 혹은 운동화를 추천드립니다. 아니면 편의에 따라 높은 힐과 편한신발 두개다 가지고 오셔서 바꿔신으셔도 됩니다.",
+        "여성분들! 주차장에서부터 결혼식 플랫폼까지 대략 800미터를 걸어오셔야 합니다. 그러므로 걷기에 지장이 없으신 편한 플랫슈즈 혹은 운동화를 추천드립니다. 아니면 편의에 따라 높은 힐과 편한신발 두개 다 가지고 오셔서 바꿔신으셔도 됩니다.",
       "questionPage.question10": "리셥션 파티는 실내인가요 실외인가요?",
       "questionPage.answer10": "리셉션은 실내에서 진행됩니다.",
       "questionPage.question11":
         "결혼식중 본인의 카메라 혹은 핸드폰으로 사진이나 비디오를 찍어도 가능하나요?",
       "questionPage.answer11":
-        "당연하죠! 최대한 많이 신랑 신부의 결혼식 사진/비디오를 찍어주셔서 whatsapp, 카카오톡, 구글포토, 혹은 문자 메세지로 사진을 공유해주세요. 인스타그램이나 페이스북같은 소셜미디어를 사용하시는 분들은 #MarcAndJenna2021 해쉬태그를 이용해서 공유해주시면 이쁘게 찍은 사진들을 저희 웨딩 웹사이트 사진관에 올리겠습니다.",
+        "당연하죠! 최대한 많이 신랑 신부의 결혼식 사진/비디오를 찍어주셔서 whatsapp, 카카오톡, 구글포토, 혹은 문자 메세지로 사진을 공유해주세요. 인스타그램이나 페이스북같은 소셜미디어를 사용하시는 분들은 #TheMartinos2021 해쉬태그를 이용해서 공유해주시면 예쁘게 찍은 사진들을 저희 웨딩 웹사이트 사진관에 올리겠습니다.",
       "questionPage.question12": "다른 궁금한점이 있으면 어디에 물어보나요?",
       "questionPage.answer12":
         "마크 (702) 290-2481 혹은 지은 (702) 410-3248. 만약 마크와 지은이가 전화/문자 답장이 없으면, 마크의 누나 Stephanie (702) 756-4612 에게 문의해주세요.",
