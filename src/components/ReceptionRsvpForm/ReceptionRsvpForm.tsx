@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { rsvpBody } from "../../queries/decoders";
 import { Button } from "../Button/Button";
+import { Dropdown } from "../Dropdown/Dropdown";
 
 export type ReceptionFormData = NonNullable<
   OutputOf<typeof rsvpBody>["reception"]
@@ -58,19 +59,12 @@ export const ReceptionRsvpForm: FC<Props> = ({
       <div style={{ marginTop: 10, padding: "0 10px", marginBottom: 10 }}>
         {
           <div className="attendDecline">
-            <div>
-              <div>
-                {t("attendingCount", { count: rsvpData.acceptCount || 0 })}
-              </div>
-              <input
-                type="range"
-                min="0"
-                max={receptionCountMax}
-                step="1"
-                value={rsvpData.acceptCount || 0}
-                id="acceptCountCouple"
-                onChange={(e) => {
-                  const newAcceptCount = parseInt(e.target.value, 10);
+            <div className="dropdownRow">
+              <div>{t("attendingCount")}</div>
+              <Dropdown
+                value={rsvpData.acceptCount}
+                maxNum={receptionCountMax}
+                onChange={(newAcceptCount) => {
                   setRsvpData((rsvp) => ({
                     ...rsvp,
                     acceptCount: newAcceptCount,
@@ -87,19 +81,12 @@ export const ReceptionRsvpForm: FC<Props> = ({
                 }}
               />
             </div>
-            <div>
-              <div>
-                {t("decliningCount", { count: rsvpData.declineCount || 0 })}
-              </div>
-              <input
-                type="range"
-                min="0"
-                max={receptionCountMax}
-                step="1"
-                value={rsvpData.declineCount || 0}
-                onChange={(e) => {
-                  const newDeclineCount = parseInt(e.target.value, 10);
-
+            <div className="dropdownRow">
+              <div>{t("decliningCount")}</div>
+              <Dropdown
+                value={rsvpData.declineCount}
+                maxNum={receptionCountMax}
+                onChange={(newDeclineCount) => {
                   setRsvpData((rsvp) => {
                     const newAcceptCount = Math.min(
                       receptionCountMax - newDeclineCount,
@@ -127,25 +114,15 @@ export const ReceptionRsvpForm: FC<Props> = ({
             {
               // @ts-ignore
               auth?.inviteeStatus === "family" && rsvpData.acceptCount >= 2 ? (
-                <div>
-                  <div>
-                    {t("childrenAttendingCount", {
-                      count: rsvpData.childrenAttendingCount,
-                    })}
-                  </div>
-                  <input
-                    type="range"
-                    min="0"
-                    max={(rsvpData.acceptCount || 1) - 1}
-                    step="1"
+                <div className="dropdownRow">
+                  <div>{t("childrenAttendingCount")}</div>
+                  <Dropdown
+                    maxNum={(rsvpData.acceptCount || 1) - 1}
                     value={rsvpData.childrenAttendingCount}
-                    onChange={(e) =>
+                    onChange={(childrenAttendingCount) =>
                       setRsvpData((rsvp) => ({
                         ...rsvp,
-                        childrenAttendingCount: parseInt(
-                          e.target.value || "0",
-                          10
-                        ),
+                        childrenAttendingCount,
                       }))
                     }
                   />
@@ -203,6 +180,9 @@ export const ReceptionRsvpForm: FC<Props> = ({
         color="primary"
         onPress={submit}
         loading={saving}
+        disabled={
+          (rsvpData.acceptCount || 0) + (rsvpData.declineCount || 0) === 0
+        }
       />
     </form>
   );

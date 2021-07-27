@@ -76,6 +76,9 @@ input[type="range"] {
   border-radius: 3px;
   padding: 10px;
 }
+.dropdownRow {
+  margin-bottom: 10px;
+}
 
 @media screen and (min-width: 500px) {
   .bottomDashboard {
@@ -90,5 +93,23 @@ input[type="range"] {
   .weddingInfoContainer,
   .receptionInfoContainer {
     width: 100%;
+  }
+  .dropdownRow {
+    margin-bottom: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .dropdownRow select {
+    margin-left: 5%;
+    width: 47.5%;
+    height: 1.75em;
+  }
+  .dropdownRow div {
+    width: 47.5%;
+    text-align: right;
+    line-height: 1em;
   }
 }

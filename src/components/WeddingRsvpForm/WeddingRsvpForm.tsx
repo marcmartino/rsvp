@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { rsvpBody } from "../../queries/decoders";
 import { Button } from "../Button/Button";
+import { Dropdown } from "../Dropdown/Dropdown";
 
 export type WeddingFormData = NonNullable<OutputOf<typeof rsvpBody>["wedding"]>;
 
@@ -47,45 +48,36 @@ export const WeddingRsvpForm: FC<Props> = ({
       <div style={{ marginTop: 10, padding: "0 10px", marginBottom: 10 }}>
         {
           <div className="attendDecline">
-            <div>
+            <div className="dropdownRow">
               <div>
                 {t("attendingCount", { count: rsvpData.acceptCount || 0 })}
               </div>
-              <input
-                type="range"
-                min="0"
-                max={weddingCountMax}
-                step="1"
+              <Dropdown
+                maxNum={weddingCountMax}
                 value={rsvpData.acceptCount || 0}
-                id="acceptCountCouple"
-                onChange={(e) =>
+                onChange={(acceptCount) =>
                   setRsvpData((rsvp) => ({
                     ...rsvp,
-                    acceptCount: parseInt(e.target.value || "0", 10),
+                    acceptCount,
                     declineCount: Math.min(
-                      weddingCountMax - parseInt(e.target.value || "0", 10),
+                      weddingCountMax - acceptCount,
                       rsvp.declineCount || 0
                     ),
                   }))
                 }
               />
             </div>
-            <div>
-              <div>
-                {t("decliningCount", { count: rsvpData.declineCount || 0 })}
-              </div>
-              <input
-                type="range"
-                min="0"
-                max={weddingCountMax}
-                step="1"
-                value={rsvpData.declineCount || 0}
-                onChange={(e) =>
+            <div className="dropdownRow">
+              <div>{t("decliningCount")}</div>
+              <Dropdown
+                maxNum={weddingCountMax}
+                value={rsvpData.declineCount}
+                onChange={(declineCount) =>
                   setRsvpData((rsvp) => ({
                     ...rsvp,
-                    declineCount: parseInt(e.target.value || "0", 10),
+                    declineCount,
                     acceptCount: Math.min(
-                      weddingCountMax - parseInt(e.target.value || "0", 10),
+                      weddingCountMax - declineCount,
                       rsvp.acceptCount || 0
                     ),
                   }))
@@ -115,6 +107,9 @@ export const WeddingRsvpForm: FC<Props> = ({
         color="primary"
         onPress={submit}
         loading={saving}
+        disabled={
+          (rsvpData.acceptCount || 0) + (rsvpData.declineCount || 0) === 0
+        }
       />
     </form>
   );

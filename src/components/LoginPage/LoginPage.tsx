@@ -13,7 +13,7 @@ import { useWeddingCountdown } from "./useWeddingCountdown";
 type Props = ComponentProps<typeof LoginForm>;
 
 export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [hasClicked, setHasClicked] = useState(false);
   const countdown = useWeddingCountdown();
 
@@ -94,6 +94,7 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
             </div>
 
             <Button
+              color="primary"
               onPress={() => setHasClicked(true)}
               label={t("welcome.enterButton")}
             />
@@ -105,6 +106,15 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
           srcSet={images[1]}
           style={{}}
         />
+        <div className="languageBtn">
+          <Button
+            onPress={() =>
+              i18n.changeLanguage(i18n.language === "en" ? "kr" : "en")
+            }
+            color="secondary"
+            label={t("languageSwitch")}
+          />
+        </div>
       </div>
     </div>
   );

@@ -9,8 +9,8 @@
   text-align: center;
 }
 .splashEnter {
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  /* overflow: hidden; */
 }
 
 .backgroundImage {
@@ -20,6 +20,7 @@
   width: 100vw;
   object-fit: cover;
   border-width: 0;
+  margin-bottom: -1vh;
 }
 .welcomeLine {
   font-family: var(--cursive-font);
@@ -47,5 +48,17 @@
     max-width: 400px;
     right: 3vw;
     top: 30vh;
+  }
+  .splashEnter {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .languageBtn {
+    position: absolute;
+    right: 3vw;
+    /* left: 0; */
+    top: 0;
+    width: 100px;
+    max-width: 25%;
   }
 }
