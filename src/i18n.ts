@@ -41,18 +41,17 @@ const resources = {
       updateRsvp: "RSVP Already Submitted",
       setRsvp: "RSVP Here",
       weddingDescriptionText: `Our ceremony will be held at the 
-      Red Spring boardwalk platform
-      The ceremony will begin promptly at 10:30 AM
-      It will last for about half an hour
+      Red Spring boardwalk platform.
+      The ceremony will begin promptly at 10:30 AM.
+      It will last for about half an hour.
       After parking your car, walk toward the picnic area.
-      Then you will see the boardwalk ahead
-      Please follow the path and
+      Then you will see the boardwalk ahead, please follow the path and
       arrive at the beautiful outdoor ceremony platform
       As you will be walking a bit, 
-      please consider wearing comfortable shoes for walking
-      You can find the direction to the parking area 
+      please consider wearing comfortable shoes for walking.
+      You can find the directions to the parking area 
       by googling "Red Spring Picnic Area".
-      See you at the wedding.
+      See you at the wedding!
       `,
       logout: "Logout",
 
