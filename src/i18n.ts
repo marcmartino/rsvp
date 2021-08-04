@@ -25,7 +25,7 @@ const resources = {
       "welcome.enterButton": "RSVP",
       "receptionInfo.title": "Reception",
       "receptionInfo.location": "The Blind Center",
-      "receptionInfo.time": "5:00pm",
+      "receptionInfo.time": "5:30pm",
       "weddingInfo.title": "Wedding",
       "weddingInfo.weddingLocation": "Red Springs Boardwalk",
       "weddingInfo.time": "10:00am",
