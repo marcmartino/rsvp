@@ -52,8 +52,6 @@ export const ReceptionRsvpForm: FC<Props> = ({
   // @ts-ignore
   const receptionCountMax = auth?.familyNames?.length || 2;
 
-  console.log(rsvpData);
-
   return (
     <form onSubmit={submit}>
       <div style={{ marginTop: 10, padding: "0 10px", marginBottom: 10 }}>

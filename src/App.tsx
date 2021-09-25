@@ -11,6 +11,8 @@ function App() {
     results: { data: authData, loading, error },
   } = useAuth();
 
+  console.log("v1.7");
+
   return (
     <div className="App">
       {/* <BgTiles /> */}

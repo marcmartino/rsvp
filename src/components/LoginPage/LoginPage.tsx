@@ -24,7 +24,6 @@ export const LoginPage: FC<Props> = ({ ...loginFormProps }) => {
   const images = useMemo(() => randomImages(2)("wide"), [
     // width,
   ]);
-  console.log(images);
 
   return (
     <div>
