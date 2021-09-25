@@ -1,6 +1,12 @@
+import axios from "axios";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AuthData, RSVP_USER, useApiLazyHook } from "../../queries/constants";
+import {
+  API_URL,
+  AuthData,
+  RSVP_USER,
+  useApiLazyHook,
+} from "../../queries/constants";
 import { mapsLink } from "../../utils/mapLink";
 import { palette } from "../../utils/styles";
 import { Button } from "../Button/Button";
@@ -35,14 +41,18 @@ export const WeddingInfo: FC<Props> = ({ auth, refetchAuth, navigate }) => {
         <WeddingRsvpForm
           auth={auth}
           onCancel={() => [setShowRsvpForm(false), navigate("info")]}
-          onSubmit={(weddingData) => {
-            return rsvpUser({
+          onSubmit={async (weddingData) => {
+            const rsvpData = {
               name: auth.recordName,
               zip: auth.zip,
               wedding: weddingData,
-            })
-              .then(refetchAuth)
-              .then(() => [setShowRsvpForm(false), navigate("info")]);
+            };
+            return Promise.all([
+              axios.post(`${API_URL}rsvp`, rsvpData),
+              rsvpUser(rsvpData)
+                .then(refetchAuth)
+                .then(() => [setShowRsvpForm(false), navigate("info")]),
+            ]);
           }}
           onRsvpLinkClick={() => navigate("questions")}
           saving={savingRsvp}

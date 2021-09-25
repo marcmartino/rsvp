@@ -1,6 +1,12 @@
+import axios from "axios";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AuthData, RSVP_USER, useApiLazyHook } from "../../queries/constants";
+import {
+  API_URL,
+  AuthData,
+  RSVP_USER,
+  useApiLazyHook,
+} from "../../queries/constants";
 import { mapsLink } from "../../utils/mapLink";
 import { palette } from "../../utils/styles";
 import { Button } from "../Button/Button";
@@ -32,14 +38,22 @@ export const ReceptionInfo: FC<Props> = ({ refetchAuth, auth, navigate }) => {
       {showRsvpForm ? (
         <ReceptionRsvpForm
           onRsvpLinkClick={() => navigate("questions")}
-          onSubmit={(receptionData) => {
-            return rsvpUser({
+          onSubmit={async (receptionData) => {
+            const rsvpData = {
               name: auth.recordName,
               zip: auth.zip,
               reception: receptionData,
-            })
-              .then(refetchAuth)
-              .then(() => [setShowRsvpForm(false), navigate("info")]);
+            };
+            console.log("rsvping");
+            await Promise.all([
+              axios.post(`${API_URL}rsvp`, rsvpData),
+              rsvpUser(rsvpData),
+            ]);
+            console.log("rsvp done");
+            return Promise.resolve(refetchAuth).then(() => [
+              setShowRsvpForm(false),
+              navigate("info"),
+            ]);
           }}
           auth={auth}
           onCancel={() => [setShowRsvpForm(false), navigate("info")]}

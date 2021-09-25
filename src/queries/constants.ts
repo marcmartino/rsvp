@@ -4,7 +4,7 @@ import { useState } from "react";
 import { authorizeUserDecoder, rsvpBody } from "./decoders";
 import { useTranslation } from "react-i18next";
 
-const API_URL =
+export const API_URL =
   process.env["NODE_ENV"] !== "production"
     ? "//localhost:3000/"
     : "https://wrsvp-api.herokuapp.com/";

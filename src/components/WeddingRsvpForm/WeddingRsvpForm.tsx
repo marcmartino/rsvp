@@ -1,5 +1,6 @@
 import { OutputOf } from "io-ts";
 import { FC, useState } from "react";
+import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { AuthData } from "../../queries/constants";
 import { rsvpBody } from "../../queries/decoders";
@@ -33,12 +34,13 @@ export const WeddingRsvpForm: FC<Props> = ({
     notes: "",
   });
 
-  const submit = () =>
+  const submit = () => {
     onSubmit({
       notes: rsvpData.notes,
       acceptCount: rsvpData.acceptCount || 0,
       declineCount: rsvpData.declineCount || 0,
     });
+  };
 
   // @ts-ignore
   const weddingCountMax = auth?.familyNames?.length || 2;
